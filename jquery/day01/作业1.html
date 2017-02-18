@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		:root{
+			font-size: 62.5%
+		}
+		.table{
+			
+			margin: 50px auto;
+			border: 1px solid #ccc;
+		}
+		.table td{
+			width: 50px;
+			height: 20px;
+			text-align: center;
+		}
+	</style>
+	<script src="js1/jquery-1.9.0.js"></script>
+	<script>
+		//1.实现复选框的效果  attr()、prop()
+		// $(function(){
+		// 	$("#all").click(function(){
+		// 		if(this.checked){
+		// 			$("#tb :checkbox").prop("checked",true)
+		// 		}else{
+		// 			$("#tb :checkbox").prop("checked",false)
+		// 		}				
+		// 	});
+		// 	$("input:not(input#all)").click(function(){
+		// 		if(!this.checked){
+		// 			$("#all").prop("checked",false)
+		// 		}else{					
+		// 			$("#all").prop("checked",true)
+		// 		}
+		// 	});
+
+
+
+		// })
+		$(function(){
+			$("#checkAll").click(function(){
+				 var $checkOne = $(".checkOne");
+				 var $checkAll = $("#checkAll");
+				 var length = $checkOne.length;
+				 //通过prop函数给属性为checkOne的复选框打钩
+				 $checkOne.prop("checked",this.checked);
+				 $checkOne.click(function(){
+				  //通过过滤选择器选择被勾选的复选框个数
+				  //如果等于，给checkAll勾选，如果不等于，checkAll不勾选
+				  $(".checkOne:checked").length==length?$checkAll.prop("checked",true):$checkAll.prop("checked",false);
+				 });
+			});
+					
+		});
+
+	</script>
+</head>
+<body>
+	<table class="table" border="1px">
+		<thead>
+			<tr>
+				<th><input type="checkbox" id="checkAll">全选</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>班级</th>
+				<th>性别</th>
+				
+			</tr>
+
+		</thead>
+		<tbody id="tb">
+			
+			<tr>
+				<td><input type="checkbox" class="checkOne"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				
+			</tr>
+			<tr>
+				<td><input type="checkbox" class="checkOne"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				
+			</tr><tr>
+				<td><input type="checkbox" class="checkOne"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				
+			</tr><tr>
+				<td><input type="checkbox" class="checkOne"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				
+			</tr>
+		</tbody>
+
+	</table>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.a_c{
+			text-align: center;
+		}
+	</style>
+	<script>
+		
+		function doAdd(){
+			//创建tr
+			var tr=document.createElement("tr");
+			//创建td
+			var tdCheckbox=document.createElement("td");
+			tdCheckbox.className="a_c";
+			var tdName=document.createElement("td");
+			var tdAge=document.createElement("td");
+			var tdSex=document.createElement("td");
+			var tdEmail=document.createElement("td");
+			var tdDelete=document.createElement("td");
+			//创建复选框
+			var checkbox=document.createElement("input");
+			checkbox.type="checkbox";
+			checkbox.name="stu";
+			checkbox.onclick=function(){
+				doDelete();
+			};
+			tdCheckbox.appendChild(checkbox);
+			//将姓名、年龄、性别、邮箱添加到td中
+			tdName.innerHTML=$("username").value;
+			tdAge.innerHTML=$("age").value;
+			// console.log($("male").checked);
+			/*if($("male").checked){ //选中男
+				tdSex.innerHTML=$("male").value;
+			}else{  //选中女
+				tdSex.innerHTML=$("female").value;
+			}*/
+			tdSex.innerHTML=$("male").checked?$("male").value:$("female").value;
+			tdEmail.innerHTML=$("email").value;
+			//创建删除按钮
+			var btnDelete=document.createElement("input");
+			btnDelete.type="button";
+			btnDelete.value="删除";
+			btnDelete.onclick=function(){
+				// $("tb").removeChild(tr);
+				$("tb").removeChild(this.parentNode.parentNode);
+			};
+			tdDelete.appendChild(btnDelete);
+
+			//将td添加到tr中
+			tr.appendChild(tdCheckbox);
+			tr.appendChild(tdName);
+			tr.appendChild(tdAge);
+			tr.appendChild(tdSex);
+			tr.appendChild(tdEmail);
+			tr.appendChild(tdDelete);
+			//将tr添加到tbody中
+			$("tb").insertBefore(tr, $("trDelete"));
+		}
+
+		function doDeleteFirst(){
+			var trs=$("tb").getElementsByTagName("tr");
+			$("tb").removeChild(trs[0]);
+		}
+
+		function doDeleteLast(){
+			var trs=$("tb").getElementsByTagName("tr");
+			$("tb").removeChild(trs[trs.length-2]);
+		}
+
+		function $(id){
+			return document.getElementById(id);
+		}
+
+		window.onload=function(){
+			//实现全选和全不选的效果
+			$("all").onclick=function(){
+				var stus=document.getElementsByName("stu");
+				if($("all").checked){
+					for(var i=0;i<stus.length;i++){
+						stus[i].checked=true;
+					}
+				}else{
+					for(var i=0;i<stus.length;i++){
+						stus[i].checked=false;
+					}
+				}
+			};
+
+			//实现当选中下面所有复选框时自动选中全选
+			var stus=document.getElementsByName("stu");
+			for(var i=0;i<stus.length;i++){ //外层循环用来为每个复选框绑定点击事件
+				stus[i].onclick=function(){
+					doDelete();
+				};
+			}
+		};
+
+		function doDelete(){
+			stus=document.getElementsByName("stu");
+			var count=0;//统计已选中的数量
+			for(var j=0;j<stus.length;j++){ //内层循环用来判断当前选中的复选框的数量
+				if(stus[j].checked){
+					count++;
+				}
+			}
+			console.log(count);
+			if(count==stus.length){
+				$("all").checked=true;
+			}else{
+				$("all").checked=false;
+			}
+		}
+
+		function doDelete2(){
+			var stus=document.getElementsByName("stu"); //4个
+			for(var i=0;i<stus.length;i++){
+				if(stus[i].checked){
+					$("tb").removeChild(stus[i].parentNode.parentNode);
+					i--;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<!-- table>(thead>tr>th*5)+tbody>(tr>td*5)*2 -->
+	<table border="1px" width="500px">
+		<thead>
+			<tr>
+				<th><input type="checkbox" id="all">全选</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>邮箱</th>
+				<th>删除</th>
+			</tr>
+		</thead>
+		<tbody id="tb">
+			<tr>
+				<td class="a_c"><input type="checkbox" name="stu"></td>
+				<td>张三</td>
+				<td>20</td>
+				<td>男</td>
+				<td>zhangsan@sina.com</td>
+				<td><input type="button" value="删除"></td>
+			</tr>
+			<tr style="text-align:center;" id="trDelete">
+				<td>
+					<input type="button" value="删除多个" onclick="doDelete2()">
+				</td>
+				<td colspan="5">
+					<input type="button" value="从首行删除" onclick="doDeleteFirst()">&nbsp;&nbsp;
+					<input type="button" value="从末行删除" onclick="doDeleteLast()">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<br>
+	<br>
+
+	<form action="">
+		用户名：<input type="text" id="username"><br>
+		年龄：<input type="text" id="age"><br>
+		性别：<input type="radio" name="sex" id="male" value="男" checked="checked">男
+			<input type="radio" name="sex" id="female" value="女">女
+			<br>
+		邮箱：<input type="text" id="email"><br>
+		<input type="button" value="添加" onclick="doAdd()">
+		<input type="reset" value="重置">
+	</form>
+
+
+
+
+
+</body>
+</html>

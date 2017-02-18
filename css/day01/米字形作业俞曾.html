@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		:root{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+
+			text-align: center;
+			font-size: 12px
+		}
+	</style>
+	<script>
+	var num=Number(prompt("请输入一个正奇数"))
+	while(num<=0||num%1!=0||num%2==0||isNaN(num)){
+		num=Number(prompt("输入有误，请重新输入一个正奇数"))
+	}
+	//外层循环控制打印的行数
+	for(var i=1;i<=num;i++){
+		//内层循环控制每行打印的个数
+		for(var j=1;j<=num;j++){
+			//判断打印的条件：1.同行同列 2.倒数同行同列 3.中间列 4.中间行
+			if (i==j||j==num-i+1||j==(num+1)/2||i==(num+1)/2) {
+				document.write("*&nbsp;&nbsp;")
+			}else{
+				document.write("&nbsp;&nbsp;&nbsp;")	
+			}												
+		}
+			document.write("<br>")
+		
+	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

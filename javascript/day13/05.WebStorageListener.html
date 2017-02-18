@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function doStart(){
+			window.addEventListener("storage", callback, false)	;
+		}
+
+		function callback(se){
+			/*for(var index in se){
+				console.log(index+"="+se[index]);
+			}*/
+			console.log("Storage中的数据被修改啦，请通知管理员！");
+			console.log("被修改的属性："+se.key);
+			console.log("原始值："+se.oldValue);
+			console.log("新值："+se.newValue);
+			console.log("url："+se.url);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="开始监听" onclick="doStart()">
+</body>
+</html>

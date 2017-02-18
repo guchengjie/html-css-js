@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- 在html标签中添加ng-app指令 -->
+<!-- <html lang="en" ng-app> -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第一个示例</title>
+	<!-- 引入AngularJS核心库 -->
+	<script src="angular/angular.min.js"></script>
+</head>
+<body>
+	<!-- AngularJS的表达式要求写在{{...}}中 -->
+	<h1 ng-app>
+		{{3+8}}
+	</h1>	
+
+	<p ng-app>
+		{{1+9}} <!-- 无效，因为只允许有一个ng-app -->
+	</p>
+
+	<!-- 
+		1.AngularJS应用程序由ng-app指令定义，即表示这是一个AngularJS应用程序
+		2.所有AngularJS应用程序都必须有且只有一个ng-app指令
+		3.ng-app指令可以在任意标签中添加，但只有添加了ng-app指令的标签内的代码才能使用AngularJS语法
+		4.一般都在html标签中添加ng-app指令
+	 -->
+</body>
+</html>

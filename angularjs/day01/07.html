@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>在作用域中定义方法</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/ng07.js"></script>
+</head>
+<body>
+	<div ng-controller="FirstController">
+		<h3 ng-bind="name"></h3>
+		<!-- <h3 ng-bind="show()"></h3> -->
+		<button ng-click="show()">Click Me</button>
+		<br>
+		<div ng-controller="SecondController">
+			<h3 ng-bind="name"></h3>
+			<button ng-click="show()">Click Me</button>
+			<button ng-click="$parent.show()">Click Me，调用父控制器中的方法</button>
+		</div>
+	</div>
+	<hr>
+
+	<div ng-controller="SecondController">
+		<h3 ng-bind="name"></h3>
+		<button ng-click="show()">Click Me</button>
+	</div>
+
+	<!-- 
+		可以使用事件指令调用本作用域中定义的方法，如ng-click、ng-mouseover等
+		如果本作用域中没有，则会向上查找，直到$rootScope
+
+		可以使用$root和$parent访问根作用域和父作用域中的数据
+
+	 -->
+	
+
+</body>
+</html>

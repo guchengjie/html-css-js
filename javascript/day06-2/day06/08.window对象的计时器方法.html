@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var timer;
+		function start(){
+			// setTimeout(callback,2000); 
+			timer=setTimeout(function(){
+				console.log("定时器工作啦！"); //一次性计时器
+			},5000); 
+		}
+
+		function callback(){
+			console.log("定时器工作啦！");
+		}
+
+		var timer2;
+		function start2(){
+			timer2=setInterval(callback, 500); //周期性计时器，每2秒执行一次
+		}
+
+		function stop(){
+			clearTimeout(timer);
+		}
+
+		function stop2(){
+			clearInterval(timer2);
+		}
+
+		//练习：每隔一秒在页面上输出一次welcome to itany
+		//分别使用setInterval()和setTimeout()实现
+
+		//方式1：
+		var timer3
+		/*function start3(){
+			timer3=setInterval(print, 1000);
+		}
+
+		function print(){
+			console.log("welcome to itany<br>");
+		}
+
+		function stop3(){
+			clearInterval(timer3);
+		}*/
+
+		//方式2:
+		function start3(){
+			console.log("welcome to itany");
+			timer3=setTimeout(start3, 1000);
+		}
+
+		function stop3(){
+			clearTimeout(timer3);
+		}
+
+
+	</script>
+</head>
+<body>
+	<input type="button" value="setTimeout" onclick="start()">
+	<input type="button" value="setInterval" onclick="start2()">
+	<input type="button" value="clearTimeout" onclick="stop()">
+	<input type="button" value="clearInterval" onclick="stop2()">
+
+	<input type="button" value="开始" onclick="start3()">
+	<input type="button" value="停止" onclick="stop3()">
+	<input type="button" value="" onclick="">
+	<input type="button" value="" onclick="">
+</body>
+</html>

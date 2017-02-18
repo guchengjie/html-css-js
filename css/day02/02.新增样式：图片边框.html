@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		:root{
+			font-size: 62.5%;
+		}
+		.itany{/* 使用的图片要设计的适合作为边框图片 */
+			width: 300px;
+			height: 200px;
+			font-size: 3rem;
+			padding: 30px;
+			/* border: 1px solid red; */
+			border-image: url(images/border.png) 26/26px round;
+		}
+
+		.itany2{
+			width: 300px;
+			height: 200px;
+			font-size: 3rem;
+			padding: 30px;
+			border: 1px solid #ccc;
+			background: url(images/as.png) top left repeat-y,
+						url(images/google.png) bottom right repeat-y,
+						url(images/nota.png) bottom repeat-x,
+						url(images/facebook.png) top no-repeat;
+			background-size: 50px 50px;
+		}
+
+		.itany3{/* 切图 */
+			width: 300px;
+			height: 200px;
+			font-size: 3rem;
+			padding: 30px;
+			border: 1px solid #ccc;
+			background: url(images/apple2.jpg) no-repeat -600px -470px;
+		}
+	</style>
+</head>
+<body>
+	<div class="itany">
+		welcome to itany
+	</div>
+	<br>
+	<div class="itany2">
+		welcome to itany
+	</div>
+	<br>
+	<div class="itany3">
+		welcome to itany
+	</div>
+</body>
+</html>

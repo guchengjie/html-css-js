@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1.定义一个数组
+		var scores=new Array();
+		//2.向数组中添加元素
+		scores[0]=95; //数组的下标（索引）从0开始
+		scores[1]=100;
+		scores[2]=68;
+		scores[3]=100;
+		//3.获取数组中的元素
+		// console.log("第一个学生的成绩："+scores[0]);	
+		// console.log("第三个学生的成绩："+scores[2]);	
+		// console.log(scores);
+		// document.write(scores);
+
+		// console.log("数组长度："+scores.length); // 通过length属性获取数组的长度，即元素中有多少个元素
+
+		scores[4]=89;
+		scores[5]=90;
+
+		// console.log(scores);
+		console.log("循环输出数组中的每一个元素:");
+		for(var i=0;i<scores.length;i++){ //在循环操作数组时，一般都从0开始，与数组下标相匹配
+			console.log("第"+(i+1)+"个学生的成绩为："+scores[i]);
+		}
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- 在ng-app指令中指定模块名 -->
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>模块控制器</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/ng03.js"></script>
+</head>
+<body>
+	<!-- 指定模块中的控制器 -->
+	<h1 ng-controller="MyController">
+		姓名：{{name||"wbs16092"}}
+	</h1>
+</body>
+</html>

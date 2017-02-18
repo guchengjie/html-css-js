@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1.提示用户输入一个正整数，判断是否是5的倍数，并输出相应的结果
+		  /*var a=Number(prompt("请输入一个正整数："));
+		  if(a%5==0){
+		  	console.log(a+"是5的倍数");
+		  }else{
+		  	console.log(a+"不是5的倍数");
+		  }*/
+
+		//2.提示用户输入矩形的长和宽，计算并输出周长和面积
+		/*var a=Number (prompt("请输入矩形的长度"));
+		var b=Number (prompt("请输入矩形的宽度"));
+		
+		console.log("周长："+2*(a+b));
+		console.log("面积："+a*b);*/
+
+		//3.接受用户输入的一个6位的数字，如：597314，将其倒序输出413795
+		var num = Number(prompt('输入一个六位数'));
+		var a1= num%10; //4
+		num= parseInt(num/10); //59731
+		var a2= num%10; //1
+		num= parseInt(num/10); //5973
+		var a3 = num%10; //3
+		num= parseInt(num/10); //597
+		var a4 = num%10; //7
+		num= parseInt(num/10); //59
+		var a5 = num%10; //9
+		num= parseInt(num/10); //5
+		console.log(""+a1+a2+a3+a4+a5+num);
+
+		//4.提示用户输入三个整数，判断并输出其中的最大值（使用if结构）
+		 var a=Number(prompt("请输入第一个整数"));
+	   var b=Number(prompt("请输入第二个整数"));
+	   var c=Number(prompt("请输入第三个整数"));
+	  /* if(a>b&&a>c){
+	   	document.write(a);
+	   }
+	   else if(b>a&&b>c){
+	   	document.write(b);
+	   	
+	   }
+	   else if(c>a&&c>b){
+	   	document.write(c);
+
+	   }*/
+	   if(a>b){
+	   	if(a>c){
+	   		document.write(a);
+	   	}else{
+	   		document.write(c);
+	   	}
+	   }else{
+	   	if(b>c){
+	   		document.write(b);
+	   	}
+	   	else{
+	   		document.write(c);
+	   	}
+	   }
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

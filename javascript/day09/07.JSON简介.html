@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//定义一个JSON对象，用来存储用户信息，属性名必须用双引号引起来，不能使用单引号
+		var user={
+			"name":"张三",
+			"age":21,
+			"address":"南京",
+			"height":178.4,
+			"isMarried":true,
+			"friends":null,
+			"show":function(){ //在JSON对象中一般不定义方法
+				console.log("我叫"+this.name);
+			},
+		};
+		/*console.log(user.address);
+		console.log(user.friends);
+		user.show();*/
+
+		
+		//复合属性
+		var person={
+			"name":{
+				"firstName":"cruise",
+				"lastName":"tom"
+			},
+			"age":30
+		};		
+		// console.log("姓氏："+person.name.firstName);
+		// console.log("姓氏："+person.firstName);
+		console.log("姓氏："+person.name);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

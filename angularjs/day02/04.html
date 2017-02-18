@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>内置过滤器：filter</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/04.js"></script>
+</head>
+<body ng-controller="FilterController">
+	<h3>原数组：{{arr}}</h3>
+	<hr>
+
+	<!-- 用法1：筛选简单数据，包含指定字符串，不区分大小写 -->
+	<h3>{{arr | filter:'a'}}</h3>
+	<h3>{{arr | filter:'al'}}</h3>
+	<!-- 用法2：筛选简单数据，不包含指定字符串 -->
+	<h3>{{arr | filter:'!a'}}</h3>
+	<!-- 用法3：筛选简单数据，完整匹配，区分大小写 -->
+	<h3>{{arr | filter:'alice':true}}</h3>
+	<hr>
+
+	<!-- 用法4：筛选复杂数据，无限制匹配，只要数据中包含指定字符串即可，name、age、pwd属性中包含a都可以 -->
+	<h3>{{users | filter:'a'}}</h3>
+	<!-- 用法5：筛选复杂数据，限制匹配，即对特定属性进行筛选，name属性中必须包含a -->
+	<h3>{{users | filter:{name:'a'} }}</h3>
+	<h3>{{users | filter:{name:'a',age:2} }}</h3>
+	<hr>
+
+	<!-- 用法6：使用自定义规则筛选简单数据，限制字符串长度为4-->
+	<h3>{{arr | filter:comp}}</h3>
+	<!-- 用法7：使用自定义规则筛选复杂数据，限制年龄大于20-->
+	<h3>{{users | filter:comp2}}</h3>
+	<!-- 用法8：使用自定义规则筛选复杂数据，限制年龄大于指定值-->
+	年龄：<input type="text" ng-model="age">
+	<h3>{{users | filter:comp3}}</h3>
+</body>
+</html>

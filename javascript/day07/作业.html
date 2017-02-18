@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*
+			1.将页面下方表单中的数据添加到上方的表格中
+
+		*/
+		function doAdd(){
+			//创建tr
+			var tr=document.createElement("tr");
+			//创建td
+			var tdName=document.createElement("td");
+			var tdAge=document.createElement("td");
+			var tdSex=document.createElement("td");
+			var tdEmail=document.createElement("td");
+			var tdDelete=document.createElement("td");
+			//将姓名、年龄、性别、邮箱添加到td中
+			tdName.innerHTML=$("username").value;
+			tdAge.innerHTML=$("age").value;
+			// console.log($("male").checked);
+			/*if($("male").checked){ //选中男
+				tdSex.innerHTML=$("male").value;
+			}else{  //选中女
+				tdSex.innerHTML=$("female").value;
+			}*/
+			tdSex.innerHTML=$("male").checked?$("male").value:$("female").value;
+			tdEmail.innerHTML=$("email").value;
+			//创建删除按钮
+			var btnDelete=document.createElement("input");
+			btnDelete.type="button";
+			btnDelete.value="删除";
+			btnDelete.onclick=function(){
+				// $("tb").removeChild(tr);
+				$("tb").removeChild(this.parentNode.parentNode);
+			};
+			tdDelete.appendChild(btnDelete);
+
+			//将td添加到tr中
+			tr.appendChild(tdName);
+			tr.appendChild(tdAge);
+			tr.appendChild(tdSex);
+			tr.appendChild(tdEmail);
+			tr.appendChild(tdDelete);
+			//将tr添加到tbody中
+			$("tb").insertBefore(tr, $("trDelete"));
+		}
+
+		function doDeleteFirst(){
+			var trs=$("tb").getElementsByTagName("tr");
+			$("tb").removeChild(trs[0]);
+		}
+
+		function doDeleteLast(){
+			var trs=$("tb").getElementsByTagName("tr");
+			$("tb").removeChild(trs[trs.length-2]);
+		}
+
+		function $(id){
+			return document.getElementById(id);
+		}
+
+
+		/*
+			2.提示用户输入一个[50,100]之间的正整数，在控制台上输出该数字的所有乘积表达式，如：用户输入90，则输出如下：
+				1*90=90
+				2*45=90   2=90/45
+				3*30=90
+				5*18=90
+				6*15=90
+				9*10=90
+			要求：
+				1）判断用户的输入是否符合要求，如果不符合则提示用户并重新输入，直到输入符合为止
+				2）不输出交换表达式，如45*2=90	
+		*/
+		var num=Number(prompt("请输入一个50-100之间的正整数：")); //abc
+		while(isNaN(num)||num<50||num>100||parseInt(num)!=num){
+			num=Number(prompt("输入有误，请重新输入50-100之间的正整数："));
+		}
+		for(var i=1;i<=num;i++){
+			var j=num/i;
+			if(parseInt(j)==j&&i<=j){
+				console.log(i+"*"+j+"="+num);
+			}
+		}
+
+
+
+	</script>
+</head>
+<body>
+	<!-- table>(thead>tr>th*5)+tbody>(tr>td*5)*2 -->
+	<table border="1px" width="500px">
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>邮箱</th>
+				<th>删除</th>
+			</tr>
+		</thead>
+		<tbody id="tb">
+			<tr>
+				<td>张三</td>
+				<td>20</td>
+				<td>男</td>
+				<td>zhangsan@sina.com</td>
+				<td><input type="button" value="删除"></td>
+			</tr>
+			<tr style="text-align:center;" id="trDelete">
+				<td colspan="5">
+					<input type="button" value="从首行删除" onclick="doDeleteFirst()">&nbsp;&nbsp;
+					<input type="button" value="从末行删除" onclick="doDeleteLast()">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<br>
+	<br>
+
+	<form action="">
+		用户名：<input type="text" id="username"><br>
+		年龄：<input type="text" id="age"><br>
+		性别：<input type="radio" name="sex" id="male" value="男" checked="checked">男
+			<input type="radio" name="sex" id="female" value="女">女
+			<br>
+		邮箱：<input type="text" id="email"><br>
+		<input type="button" value="添加" onclick="doAdd()">
+		<input type="reset" value="重置">
+	</form>
+
+
+
+
+
+</body>
+</html>

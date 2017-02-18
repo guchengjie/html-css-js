@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.6.4.js"></script>
+	<script>
+		function doAdd(){
+			/*var li=$("<li>");
+			li.html("编程");*/
+			var li=$("<li>编程</li>");
+			// $("ul").append(li);
+			var li2=$("<li id='last'>编程</li>");
+			// $("ul").append(li2);
+			// li2.appendTo($("ul"));
+			// $("ul").prepend(li2);
+			// li2.prependTo($("ul"));
+
+			var p=$("<p>welcome to wbs16092</p>");
+			// $("ul").after(p);
+			// p.insertAfter($("ul"));
+			$("ul").before(p);
+		}
+
+		function doDelete(){
+			// $("ul li:first").remove();
+			$("ul li:first").empty();
+		}
+
+		function doClone(){
+			$("ul li:first").clone(true).appendTo($("ul"));
+		}
+
+		$(function(){
+			$("ul li:first").click(function(){
+				console.log("嘿嘿");
+			});
+		});
+
+		function doReplace(){
+			// $("ul li:contains(睡觉)").replaceWith($("<li>跑步</li>"));
+			$("<li>跑步</li>").replaceAll($("ul li:contains(睡觉)"));
+		}
+
+		function doAttribute(){
+			// console.log($("ul li:first").attr("id"));
+			// $("ul li:first").attr("id","one")
+			$("ul  li:first").removeAttr("id");
+		}
+	</script>
+
+</head>
+<body>
+	<input type="button" value="添加节点" onclick="doAdd()">
+	<input type="button" value="删除节点" onclick="doDelete()">
+	<input type="button" value="复制节点" onclick="doClone()">
+	<input type="button" value="替换节点" onclick="doReplace()">
+	<input type="button" value="操作属性" onclick="doAttribute()">
+	<hr>
+
+	<ul>
+		<li id="first">吃饭</li>
+		<li>睡觉啊</li>
+		<li>打豆豆</li>
+	</ul>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//基本数据类型：string、number、boolean、undefined、null
+		//引用数据类型：Math、Array、Date、RegExp、String、Number、Boolean
+		var stu1="tom"; //string
+		var stu2=new String("alice"); //String
+		var stu3=new Object();
+
+		//不能为基本数据string添加属性和方法
+		/*stu1.age=20;
+		stu1.study=function(){
+			console.log("study");
+		};
+
+		console.log(stu1);
+		console.log(stu1.age);
+		stu1.study();*/
+
+		//可以为包装类型添加属性和方法，但此处不建议这么做，因为这样做会导致分不清到底是基本类型还是引用类型
+		stu2.age=20;
+		stu2.study=function(){
+			console.log("study");
+		};
+
+		console.log(stu2);
+		console.log(stu2.age);
+		stu2.study();
+
+		//使用字面量创建的字符串是基本数据类型
+		//使用构造函数创建的字符串是引用数据类型（包装类型）
+		console.log(stu1.toString());
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

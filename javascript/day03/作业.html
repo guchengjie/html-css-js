@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1.求1~100之间不能被3整除的数之和(分别使用while、do...while、for)
+		// 1.
+		/*var sum=0;
+		for(var i=1;i<=100;i++)
+		{
+			if(i%3!=0)
+			{
+				sum=sum+i;
+			}
+		}
+		document.write("不能被3整除的和为：" +sum);*/
+
+	  /* 2.
+	   var sum=0;
+	   var i=1;
+	   while (i<=100) {
+
+	   if(i%3!=0)
+	   {
+	   	sum=sum+i;
+	   }
+	     i++;
+	   }
+	  document.write("不能被3整除的和为：" +sum);*/
+
+	  // 3.
+	  /*sum=0;
+	  i=1;
+	  do{
+	    if(i%3!=0)
+	    {
+	    	sum=sum+i;
+	    }
+	    i++;
+	  }while(i<=100)
+	 document.write("不能被3整除的和为：" +sum);*/
+
+
+
+		//2.输入任意一个整数，根据这个值输出加法表，假设输入值为5，输出效果
+		/*var w;
+		var a=Number(prompt("请输入一个整数："));
+		for(var q=0;q<=a;q++){
+            w=a-q;
+            document.write(q+"+"+w+'='+a+"<br>");
+		}*/
+
+
+		//3.循环输入8个学生的成绩，统计分数大于等于80分的学生的比例（使用continue）
+		/*var sum=0;
+		for(var i=1;i<=8;i++){
+			var score=Number(prompt("请输入第"+i+'位同学的成绩：'));
+			if(score<80){
+				continue;
+			}
+			sum++;
+		}
+		document.write("分数大于等于80分的学生的比例:"+sum/8*100+"%");*/
+		
+
+		/*
+			4.分别提示用户输入三角形的边，范围必须在[1,100]之间，如果输入有误，提示用户并重新输入，直接输入符合要求为止
+			判断三角形的类型：	
+				1)非三角形
+				2)等边
+				3)等腰
+				4)直角
+				5)普通
+		*/	
+	   /*var a=Number(prompt("输入三角形的a边在1-100之间："));
+       var b=Number(prompt("输入三角形的b边在1-100之间："));
+       var c=Number(prompt("输入三角形的c边在1-100之间："));
+       while(a<1||a>100||b<1||b>100||c<1||c>100){
+              alert("输入有误，提示用户并重新输入:");
+              var a=Number(prompt("输入三角形的a边在1-100之间："));
+              var b=Number(prompt("输入三角形的b边在1-100之间："));
+              var c=Number(prompt("输入三角形的c边在1-100之间："));
+       }
+       if(a+b<=c||a+c<=b||b+c<=a){
+       	alert("非三角形");
+       }else if(a==b&&a==c){
+       	alert("等边三角形");
+       }else if(a==b||a==c||b==c){
+       	alert("等腰三角形");
+       }else if(a*a+b*b==c*c||a*a+c*c==b*b||c*c+b*b==a*a){
+       	alert("直角三角形")
+       }else{
+       	alert("普通三角形");
+       }*/
+
+
+		//5.提示用户输入一个整数，如：1564987316879，将其倒序输出9786137894651
+	   /*num=Number(prompt("请输入一个整数")); //123456789
+	   while(num!=0)
+	   {
+		document.write(num%10);
+		num=parseInt(num/10);
+	   }*/
+
+		//6.输出1到1000之间5的倍数，并统计个数，要求每行输出8个
+		/*var a=1;
+		var b=0;
+		while(a<=1000){
+			if(a%5==0){
+				b++;
+				document.write(a+"&nbsp;");
+				if(b%8==0){
+					document.write("<br>");
+				}
+			}
+			a++;
+		}
+		document.write("总共有"+b+"个");*/
+
+		/*
+			7.猜字游戏
+			随机产生一个[1,99]之间的随机整数，提示用户输入猜的数字，并告诉用户猜大了还是猜小了，最多有5次机会
+		*/
+		/*var a=parseInt(Math.random()*99)+1;
+		console.log(a);
+
+		for(var i=1;i<=5;i++){
+			var b=prompt("请在1～99中输入你第"+i+"次要猜的值:")
+			if(b==a){
+				document.write("恭喜你猜对了，中奖数字为"+a+"，您共猜了"+i+"次！");
+				break;
+			}else if (b>a) {
+				document.write("您猜大了!<br>");		
+			}else{
+				document.write("您猜小了!<br>");
+			}
+		}
+		if(i==6){
+		 document.write("次数已经用完～请充值再来！！!<br>用心创造快乐！没钱玩XXX！！！");
+		}*/
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

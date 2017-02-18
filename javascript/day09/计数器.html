@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var r=0;
+		var l=0;
+		var timer;
+
+		function doStart(){
+			$("start").disabled=true;
+			$("stop").disabled=false;
+			r++;
+			if(r>9){
+				r=0;
+				l++;
+			}
+			if(l>9){
+				l=0;
+			}
+			$("right").src="number/"+r+".bmp";
+			$("left").src="number/"+l+".bmp";
+
+			timer=setTimeout(doStart, 50);
+		}
+
+		function doStop(){
+			$("start").disabled=false;
+			$("stop").disabled=true;
+			clearTimeout(timer);
+		}
+
+		function $(id){
+			return document.getElementById(id)
+		}
+	</script>
+	<style>
+	div{
+		width: 400px;
+		margin: 100px auto;
+		text-align: center;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		margin-bottom: 10px;
+	}
+	li{
+		list-style: none;
+		display: inline-block;
+		
+	}
+	img{
+		width: 81px;
+	}
+	input{
+		margin: 0 10px 0 10px;
+	}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><img src="number/0.bmp" id="left"></li>
+			<li><img src="number/0.bmp" id="right"></li>
+		</ul>
+		<input type="button" value='开始' onclick="doStart()" id="start">
+		<input type="button" value='停止' onclick="doStop()" disabled id="stop">
+	</div>
+</body>
+</html>

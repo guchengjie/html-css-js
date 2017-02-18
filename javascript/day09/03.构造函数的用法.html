@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1.定义构造函数，用来创建学生对象
+		function Student(){
+			//为对象添加属性
+			this.name="tom";	
+			this.age=20;
+			this.sex="male";
+			//为对象添加方法
+			this.study=function(){
+				console.log("我是一个学生，正在学习！");
+			};
+			this.show=function(){
+				console.log(this.name);
+				console.log(this.age);
+				console.log(this.sex);
+			};
+		}
+
+		//2.调用构造函数，创建对象
+		/*var stu1=new Student();
+		console.log(stu1.name);
+		stu1.study();
+
+		var stu2=new Student();
+		console.log(stu2.name);
+		stu2.show();*/
+
+		
+		//带参的构造函数
+		function Doctor(name,sex){
+			this.name=name;
+			this.sex=sex;
+			this.work=function(){
+				console.log("我是一个医生，我叫"+this.name+"，正在做手术！");
+			};
+		}
+
+		var zhang=new Doctor("张高彬","男");	
+		zhang.work();
+
+		var chen=new Doctor("陈啸","女");
+		chen.work();
+
+
+		function Computer(brand,price,type){
+			this.brand=brand;
+			this.price=price;
+			this.type=type;
+			this.work=function(){
+				console.log(this.brand+"电脑正在工作！");
+			};
+		}
+
+		var c1=new Computer("联想",4000,"台式机");
+		var c2=new Computer("DELL",3900,"笔记本");
+		c1.work();
+		c2.work();
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

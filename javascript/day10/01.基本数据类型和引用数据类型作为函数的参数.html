@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//基本数据类型作为参数
+		/*function fn1(num){
+			num=100;
+		}
+
+		var a=5;
+		fn1(a);*/
+		// console.log(a);
+
+		//引用数据类型作为参数
+		/*function Student(name,age,score){
+			this.name=name;
+			this.age=age;
+			this.score=score;
+		}
+
+		function fn2(student){
+			student.name="alice";
+			student.age=40;
+			student.score=88;
+		}
+
+		var stu1=new Student("tom",24,90);
+		fn2(stu1);
+		console.log(stu1.name);
+		console.log(stu1.age);
+		console.log(stu1.score);*/
+
+
+		function fn3(array){
+			array[0]=88;
+			array[1]=66;
+		}
+
+		var nums=[23,12,4,56,3];
+		fn3(nums);
+		console.log(nums);
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

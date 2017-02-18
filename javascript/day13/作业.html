@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//年范围：1980-今年
+
+		//月范围：1-12
+
+		//日范围：1-31
+
+		//要求：1.默认显示今天   2.天要随着月份自然调整变化
+		var today=new Date();
+		var year=today.getFullYear();
+		var month=today.getMonth();
+		var date=today.getDate()
+		window.onload=function(){
+			for(var i=year;i>=1980;i--){
+				var option=new Option(i,i);
+				if(i==year){
+					option.selected=true;
+				}
+				$("year").add(option,null);
+				// console.log($("year").value);
+			}
+			for(var j=1;j<=12;j++){
+				var option=new Option(j,j);
+				if((j-1)==month){
+					option.selected=true;
+				}
+				$("month").add(option,null);
+			}
+			doChange();
+			
+		}		
+		function doChange(){
+			$("date").length=0;
+			for(var k=1;k<=31;k++){
+				var reg=/[469]|^11$/;
+				var num=$("year").value;
+				var mon=$("month").value;				
+				if(mon==2){				
+					if((num%4==0&&num%100!=0)||num%400==0){
+						if(k>29){
+							break;
+						}						
+					}else if(k>28){
+						break;
+					}
+				}else{
+					if(k>30&&reg.test(mon)){
+						break;
+					}
+				}
+				var option=new Option(k,k);
+				if(k==date){
+					option.selected=true;
+				}
+				$("date").add(option,null);
+			}
+		}
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+<body>
+	<select id="year" onchange="doChange()"></select>
+	<select id="month" onchange="doChange()"></select>
+	<select id="date"></select>
+</body>
+</html>

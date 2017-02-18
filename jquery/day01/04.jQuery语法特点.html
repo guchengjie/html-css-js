@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		$(function(){
+			//1.读取和设置使用同一个方法
+			$("#btn1").click(function(){
+				console.log($("#itany").html());
+				console.log($("#itany").css("font-size"));
+				console.log($("#itany").css("color"));
+				console.log($("#btn1").val());
+			});
+
+			$("#btn2").click(function(){
+				/*$("#itany").html("Hello jQuery!");
+				$("#itany").css("font-size","40px");
+				$("#itany").css("color","#f00");*/
+
+				// $("#itany").html("Hello jQuery!").css("font-size","40px").css("color","blue").css("background","#ccc"); //链式写法
+
+				$("#itany").html("Hello jQuery!").css({ //JSON写法，传递JSON参数
+					"font-size":"40px",
+					"color":"blue",
+					"background":"pink"
+				});
+
+				$("#btn2").val("Setting");
+			});
+		});
+	</script>	
+</head>
+<body>
+	<input type="button" value="读取" id="btn1">
+	<input type="button" value="设置" id="btn2">
+	<input type="button" value="" id="btn3">
+	<br>
+
+	<p id="itany">welcome to wbs16092</p>
+</body>
+</html>

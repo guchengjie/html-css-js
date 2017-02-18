@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		span:empty{
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			background: #ccc;
+		}
+	</style>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		$(function(){
+			$("#btn1").click(function(){
+				$("div#first span:first").css("background","red");
+				console.log($("span:first").length);
+			});
+
+			$("#btn2").click(function(){
+				var obj=$("div#first span:last");
+				obj.css("background","red");
+				console.log(obj.length);
+			});
+
+			$("#btn3").click(function(){
+				var obj=$("div.hello");
+				obj.css("background","red");
+				console.log(obj.length);
+			});
+
+			$("#btn4").click(function(){
+				var obj=$("div:not(div.hello)");
+				obj.css("background","yellow");
+				console.log(obj.length);
+			});
+
+			$("#btn5").click(function(){
+				var obj=$("div:even");
+				obj.css("background","yellow");
+				console.log(obj.length);
+			});
+
+			$("#btn6").click(function(){
+				// var obj=$("span:eq(1)");
+				// var obj=$("span:gt(1)");
+				var obj=$(":header");
+				obj.css("background","yellow");
+				console.log(obj.length);
+			});
+
+			$("#btn7").click(function(){
+				var obj=$("span:contains(sp)");
+				obj.css("background","yellow");
+				console.log(obj.length);
+			});
+
+			$("#btn8").click(function(){
+				// var obj=$("span:empty");
+				// obj.html("这原本是一个空元素。");
+				// var obj=$("div:has(span.hello)");
+				var obj=$("span:parent");
+				obj.css("background","yellow");
+				console.log(obj.length);
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="选择第一个span元素" id="btn1">
+	<input type="button" value="选择最后一个span元素" id="btn2">
+	<input type="button" value="选择class为hello的div元素" id="btn3">
+	<input type="button" value="选择class不为hello的div元素" id="btn4">
+	<input type="button" value="选择索引为偶数的div元素" id="btn5">
+	<input type="button" value="过滤选择器" id="btn6">
+	<input type="button" value="选择含有'sp'关键字的span元素" id="btn7">
+	<input type="button" value="内容选择器" id="btn8">
+	
+	<hr>
+
+	<p>p0</p>
+	<h3>h3</h3>
+	<span>span0</span>
+	<span></span>
+	<div id="first">div1
+		<p>
+			<span>111</span>
+		</p>
+		<span class="hello">span2</span>
+		<span>span3</span>
+	</div>
+	<h1>h1</h1>
+	<div id="second">div2</div>
+	<div class="itany">div3</div>
+	<div class="hello">div4</div>
+	<div class="itany">div5</div>
+	<p>p1</p>
+	<p>p2</p>
+	<p class="hello">p3</p>
+	<p>p4sp</p>
+	<p>sp5</p>
+	<h2>hsp2</h2>
+	<h5>h5</h5>
+</body>
+</html>

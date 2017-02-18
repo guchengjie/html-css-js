@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		:root{
+			font-size: 62.5%;
+		}
+		/* 1行，6列 */
+		/* .wrap{
+			width: 607px;
+			border: 1px solid #ccc;
+		}
+		.wrap div:not(:last-child){
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			float: left;
+		}
+		.clear_both{
+			clear: both;
+		}
+		.wrap div:not(:first-child){
+			margin-left: -1px;
+		} */
+
+		/* 2行，3列 */
+		.wrap{
+			width: 604px;
+			border: 1px solid #ccc;
+		}
+		.wrap div:not(:last-child){
+			width: 200px;
+			height: 100px;
+			border: 1px solid red;
+			float: left;
+		}
+		.clear_both{
+			clear: both;
+		}
+		.wrap div:not(:nth-child(3n+1)){
+			margin-left: -1px;
+		}
+		.wrap div:nth-child(n+4){
+			margin-top: -1px;
+		}
+
+		.tab{
+			width: 604px;
+			border-spacing: 0px;
+			border-collapse: collapse;/* 折叠 */
+		}
+		.tab td{
+			width: 200px;
+			height: 100px;
+			border: 1px solid red;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div>div1</div>
+		<div>div2</div>
+		<div>div3</div>
+		<div>div4</div>
+		<div>div5</div>
+		<div>div6</div>
+		<div class="clear_both"></div>
+	</div>
+	<div>itany</div>
+	<hr>
+	<br>
+
+	<table class="tab"> <!-- cellspacing="0" -->
+		<tbody>
+			<tr>
+				<td>td1</td>
+				<td>td2</td>
+				<td>td3</td>
+			</tr>
+			<tr>
+				<td>td1</td>
+				<td>td2</td>
+				<td>td3</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+
+
+</body>
+</html>

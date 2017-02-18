@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>内置过滤器：orderBy</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/05.js"></script>
+</head>
+<body ng-controller="FilterController">
+	<!-- 1.按name排序，默认升序排列（不区大小写） -->
+	<h3>{{users | orderBy:'name'}}</h3>
+
+	<!-- 2.按pwd和age排序 -->
+	<h3>{{users | orderBy:['pwd','age']}}</h3>
+
+	<!-- 3.按age降序，方式一 -->
+	<h3>{{users | orderBy:'-age'}}</h3>
+	<!-- 4.按age降序，方式二 -->
+	<h3>{{users | orderBy:'age':true}}</h3>
+
+	<!-- 5.自定义规则，按name的长度从短到长 -->
+	<h3>{{users | orderBy:compName}}</h3>
+	<!-- <h3>{{users | orderBy:compName:true}}</h3> -->
+
+	<!-- 6.自定义规则，先按name的长度从短到长，长度相同按照姓名的字符由小到大顺序 -->
+	<h3>{{users | orderBy:'name':false:compName2}}</h3>
+</body>
+</html>

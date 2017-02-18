@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var str="Heofo2llo World!";
+		/*console.log(str);
+
+		var s1=str.toUpperCase(); //返回新字符串
+		console.log(s1);
+		console.log(str); //原字符串内容不变
+
+		console.log(str.toLowerCase());		*/
+
+
+		/*
+			截取方法
+		*/
+		//substr()
+		/*var s1=str.substr(2,3);
+		console.log(s1);
+		console.log(str.substr(2));	 //如果未指定第二个参数，表示截取到末尾
+		console.log(str.substr(-5)); //支持负数，表示从倒数第几个开始截取
+		console.log(str.substr(-5,2));*/
+
+		//substring()
+		/*console.log(str.substring(2,3)); //截取[2,3)，不包括右边界
+		console.log(str.substring(2)); 
+		console.log(str.substring(-5)); //不支持负数，会从头开始截取
+		console.log(str.substring(-2,5)); 
+		console.log(str.substring(5,2)); //自动交换能力，相当于str.substring(2,5)*/
+		
+		//slice()
+		/*console.log(str.slice(2,3)); //截取[2,3)，不包括右边界
+		console.log(str.slice(2)); 
+		console.log(str.slice(-5)); //支持负数
+		console.log(str.slice(-5,14)); 
+		console.log(str.slice(5,2)); //不具有自动交换的能力*/
+
+		//分割split()
+		var str3="tom,jack,alice,mike";
+		// var names=str3.split(",");
+		// var names=str3.split(",",2);
+		var names=str3.split("");
+		console.log(names.length);
+		console.log(names);
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

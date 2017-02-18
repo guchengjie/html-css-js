@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>itany</title>
+	<style>
+		#mydiv{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			background: #ccc;
+		}
+	</style>
+	<script>
+		function doBackgroundColor(){
+			document.bgColor="red";
+		}
+
+		function doTitle(){
+			console.log(document.title);
+		}
+
+		function doBody(){
+			console.log(document.body);
+		}
+
+		function doId(){
+			var mydiv=document.getElementById("mydiv"); //返回一个DOM对象
+			// console.log(mydiv);
+			console.log(mydiv.innerHTML);	
+		}
+
+		function doName(){
+			var hobbies=document.getElementsByName("hobby");
+			// console.log(hobbies.length);
+			// console.log(hobbies);
+			for(var i=0;i<hobbies.length;i++){
+				var obj=hobbies[i];
+				// console.log(obj);
+				// console.log(obj.innerHTML);//获取不到
+				console.log(obj.value);
+			}
+		}
+
+		function doTagName(){
+			var labels=document.getElementsByTagName("label");
+			console.log(labels.length);
+			for(var index in labels){
+				console.log(index+"="+labels[index]);
+				// console.log(obj.innerHTMl);
+			}
+		}
+
+		function doClass(){
+			var objs=document.getElementsByClassName("itany");
+			console.log(objs.length);
+			for(var i=0;i<objs.length;i++){
+				console.log(objs[i]);
+			}
+		}
+
+		function doDiv(){
+			// var mydiv=document.getElementById("mydiv");
+			var mydiv=$("mydiv");
+			// console.log(mydiv.innerHTML);
+			mydiv.innerHTML="欢迎来到南京网博！";
+		}
+
+		function doP(){
+			$("myp").innerHTML="欢迎来到wbs16092.";
+		}
+
+		function doText(){
+			// console.log($("username").value);
+			$("username").value="嘿嘿";
+		}
+
+		//自定义函数，简化根据ID获取元素
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="设置页面背景" onclick="doBackgroundColor()">
+	<input type="button" value="获取title" onclick="doTitle()">
+	<input type="button" value="获取body" onclick="doBody()">
+
+	<input type="button" value="getElementById" onclick="doId()">
+	<input type="button" value="getElementsByName" onclick="doName()">
+	<input type="button" value="getElementsByTagName" onclick="doTagName()">
+	<input type="button" value="getElementByClassName" onclick="doClass()">
+	<input type="button" value="操作mydiv中的文本" onclick="doDiv()">
+	<input type="button" value="操作myp中的文本" onclick="doP()">
+	<input type="button" value="操作文本框" onclick="doText()">
+	<hr>
+
+	<div id="mydiv">welcome to itany</div>
+	<div class="itany">hello world</div>
+
+	爱好：
+	<!-- (input:checkbox[name=hobby][id][value]+label[for])*3 -->
+	<input type="checkbox" name="hobby" id="eat" value="eat">
+	<label for="eat">吃饭</label>
+	<input type="checkbox" name="hobby" id="sleep" value="sleep">
+	<label for="sleep">睡觉</label>
+	<input type="checkbox" name="hobby" id="doudou" value="doudou">
+	<label for="doudou" class="itany">打豆豆</label>
+
+	<p class="itany" id="myp">welcome to p</p>
+
+	用户名：<input type="text" id="username" value="">
+
+</body>
+</html>

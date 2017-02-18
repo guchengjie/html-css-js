@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		// var date=new Date(2016,5,32); //2016.6.32
+		// var date=new Date(2000,1,30); //2000.2.30 闰年的2月有29天，条件（二选一）：1.能被4整除，但不能被100整除  2.能被400整除
+		// var date=new Date(1900,1,29); //平年，28天
+
+		// console.log(date);
+
+
+		//计算某年某月有多少天？
+		// var year=prompt("请输入年份：")*1; //2000 2015
+		// var month=prompt("请输入月份：")*1; //1  4  2   
+		//方式1：
+		/*var d=new Date(year,month-1,31);
+		var date=d.getDate(); // 31、1、2、3
+		if(date==31){
+			console.log("31天");
+		}else{
+			console.log(31-date+"天");
+		}*/
+		//方式2：
+		// var d=new Date(year,month,0);
+		// console.log(d.getDate()+"天");
+
+
+		//练习：
+		//获取当前时间并显示
+		function showTime(){
+			var today=new Date();
+			var year=today.getFullYear();
+			var month=checkNum(today.getMonth()+1);
+			var date=checkNum(today.getDate());
+			var hour=today.getHours();
+			var shangXia="上午";
+			if(hour>12){
+				hour=hour-12;
+				shangXia="下午";
+			}
+			hour=checkNum(hour);
+			var minute=checkNum(today.getMinutes());
+			var second=checkNum(today.getSeconds());
+			var day=today.getDay();
+			var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+			var currentTime=year+"年"+month+"月"+date+"日 "+hour+":"+minute+":"+second+" "+shangXia+" "+weekday[day];
+			document.getElementById("currentTime").innerHTML=currentTime;
+
+			setTimeout(showTime,1000);
+		}
+
+		function checkNum(num){
+			if(num<10){
+				num="0"+num;
+			}
+			return num;
+		}
+
+		window.onload=function(){
+			showTime();
+		};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<div id="currentTime"></div>
+</body>
+</html>

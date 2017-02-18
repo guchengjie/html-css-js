@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>$rootScope对象</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/ng06.js"></script>
+</head>
+<body>
+	<h3 ng-bind="address"></h3>
+	<h3 ng-bind="name"></h3>
+	<hr>
+
+	<div ng-controller="FirstController">
+		<h3 ng-bind="name"></h3>
+		<h3 ng-bind="age"></h3>
+		<h3 ng-bind="address"></h3>
+		<h3>根作用域中的name:{{$root.name}}</h3>
+		<br>
+		<div ng-controller="SecondController">
+			<h3 ng-bind="name"></h3>
+			<h3>根作用域中的name:{{$root.name}}</h3>
+			<h3>父作用域中的name:{{$parent.name}}</h3>
+		</div>
+	</div>
+	<hr>
+
+	<div ng-controller="SecondController">
+		<h3 ng-bind="name"></h3>
+		<h3>父作用域中的name:{{$parent.name}}</h3>
+	</div>
+
+
+</body>
+</html>

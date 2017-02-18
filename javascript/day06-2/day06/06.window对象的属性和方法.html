@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//window对象的属性，用法：对象名.属性名
+		//由于window对象是顶层对象，所以可以省略
+
+		//screen属性
+		/*console.log(window.screen);	
+		var s=window.screen;
+		console.log(s.width+"*"+s.height);		*/
+		// console.log(window.screen.width+"*"+window.screen.height);
+		// console.log(screen.width+"*"+screen.height);
+
+
+		//window对象的方法，用法：对象名.方法名()
+		function doAlert(){
+			// window.alert("这是window对象的alert方法");
+			alert("这是window对象的alert方法");
+		}
+
+		function doConfirm(){
+			var flag=confirm("您确定要关闭吗？");
+			if(flag){
+				console.log("好，关就关");
+			}else{
+				console.log("取消关闭");
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<input type="button" value="测试alert" onclick="doAlert()">
+	<input type="button" value="测试confirm" onclick="doConfirm()">
+</body>
+</html>

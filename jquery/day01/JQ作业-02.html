@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script>
+			//2.提示用户输入一个正整数，在页面中输出菱形，如用户输入6，要求判断用户输入的是否符合要求
+				window.onload=function(){
+					var num=Number(prompt("请输入一个正整数:"));
+					while(num%1!=0){
+						num=Number(prompt("你输入的不是正整数，请重新输入:"));
+					}
+
+                  for (var i=1; i<=2*num-1; i++) {
+			           for (var j=1; j<=2*num-1; j++){
+				
+				if ((i+j==num+1)||(j-i==num-1)||(i-j==num-1)||(i+j==3*num-1)) {
+					document.write("□");
+				}else{
+					document.write("&nbsp;");
+				}
+			}
+			document.write("<br>");
+		}
+                  
+			} 
+
+			
+
+
+					
+					
+						
+							
+
+
+
+
+	</script>
+</head>
+<body>
+
+
+	
+</body>
+</html>

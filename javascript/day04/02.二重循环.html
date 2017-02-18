@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//二重循环：一个循环的内部又嵌套着另一个循环，外层循环执行一次，内层循环执行一轮
+
+		//某次程序大赛，共3个班级参加，每个班级有4名学员参赛，计算每个班级参赛学员的平均分
+
+		//外层循环控制班级数量
+		/*for(var i=1;i<=3;i++){
+			alert("---------请输入第"+i+"个班级的成绩----------");
+			//内层循环控制班级中学生的数量
+			var sum=0;//统计每个班级的总分
+			for(var j=1;j<=4;j++){
+				var score=Number(prompt("请输入第"+j+"个学生的成绩："));
+				sum+=score;
+			}
+			var avg=sum/4;
+			console.log("第"+i+"个班级的平均分为："+avg);
+		}*/
+
+		//练习1：用*打印直角三角形(1,2,3,4,5...)
+		var rows=Number(prompt("请输入行数："));
+		for(var i=1;i<=rows;i++){ //外层循环控制行数
+			for(var j=1;j<=i;j++){
+				document.write("*");
+			}
+			document.write("<br>");
+		}
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

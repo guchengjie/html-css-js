@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/include.js"></script>
+	<script>
+		var keywords=["apple","tom","alice","body","abc","apache","before","baby","jack","rose","animate","bull","border","ajax"];
+		var emails=["qq.com","sina.com","126.com","163.com","souhu.com","itany.com","139.com","sos.com"];
+
+		$(function(){
+			$("#txt").autocomplete({
+				source:keywords,
+				minLength:1,
+				autoFocus:true,
+				delay:1000,
+			});
+
+			$("#txtEmail").autocomplete({
+				source:function(req,res){ //request请求、response响应
+					/*for(var index in req){
+						console.log(index+"="+req[index]);
+					}*/
+					var str=req.term;//获取用户输入的内容
+
+					var data=[];//用来存储提示的内容
+					for(var i=0;i<emails.length;i++){
+						//获取@符号的位置
+						var index=str.indexOf("@");
+						if(index!=-1){
+							var suffix=str.substring(index+1); //获取@符号后面的内容，即后缀
+							if(emails[i].indexOf(suffix)==0){ //找到匹配的邮箱
+								//tom@sin
+								data.push(str.substring(0,index)+"@"+emails[i]);
+							}
+						}else{
+							data.push(str+"@"+emails[i]);
+						}
+					}
+
+					// console.log(res.constructor.name);
+					res(data); //调用res()函数，将提示内容作为参数传入
+				},
+			});
+		});
+	</script>
+</head>
+<body>
+	关键字：<input type="text" id="txt">
+	<hr>
+	<br>
+
+	邮箱：<input type="text" id="txtEmail">
+</body>
+</html>

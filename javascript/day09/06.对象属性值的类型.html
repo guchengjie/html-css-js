@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*
+			定义一个学生类型，要求具有如下属性和方法：
+				姓名、年龄、性别、课程分数(html、css、javascript)，
+				显示个人信息的方法
+		*/
+
+		//方式1
+		function Student(name,age,sex,html,css,javascript){
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+			this.html=html;
+			this.css=css;
+			this.javascript=javascript;
+			this.show=function(){
+				console.log("我是一个学生，信息如下：");
+				console.log(this.name+","+this.age+","+this.sex);
+				console.log(this.html+","+this.css+","+this.javascript);
+			};
+		}
+		/*var stu1=new Student("秋香",20,"女",90,56,100);
+		stu1.show();
+
+		console.log(stu1.name);
+		console.log(stu1.sex);
+		console.log(stu1.css);*/
+
+		//方式2
+		function Score(html,css,javascript){
+			this.html=html;
+			this.css=css;
+			this.javascript=javascript;
+		}
+
+		function Student(name,age,sex,score){
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+			this.score=score;
+			this.show=function(){
+				console.log("我是一个学生，信息如下：");
+				console.log(this.name+","+this.age+","+this.sex);
+				console.log(this.score.html+","+this.score.css+","+this.score.javascript);
+			};
+		}
+
+		/*var score=new Score(89,100,78);
+		var stu2=new Student("唐伯虎",25,"男",score);
+
+		stu2.show();
+		console.log("JavaScript成绩："+stu2.score.javascript);*/
+
+
+		//自定义一个构造函数，其实就是定义了一种类型
+		/*function User(id,username,password){
+			this.id=id;
+			this.username=username;
+			this.password=password;
+		}
+
+		var u1=new User(1001,"admin","123");
+		var u2=new User(1002,"tom","222");
+		var u3=new User(1003,"jack","444");
+		var u4=new User(1004,"alice","888");
+
+		var users=new Array(u1,u2,u3,u4);
+		console.log(users.length);*/
+
+		var nums=[23,5,23,56,24];
+		var users=[  //对象数组，即数组中的元素都是对象
+			{
+				id:1001,
+				username:"tom",
+				password:"123"
+			},
+			{
+				id:1002,
+				username:"jack",
+				password:"111"
+			},
+			{
+				id:1003,
+				username:"alice",
+				password:"222"
+			},
+			{
+				id:1004,
+				username:"mike",
+				password:"666"
+			}
+		];
+
+		for(var i=0;i<users.length;i++){
+			var u=users[i];
+			console.log(u.username+","+u.password);
+		}
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

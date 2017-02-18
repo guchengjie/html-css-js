@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//使用原型为String类添加一个方法，用来判断字符串是否为回文（正写与反写相同，如：上海自来水来自海上），返回布尔值
+		//注:空字符串不是回文
+		String.prototype.isHuiWen=function(){
+			if(this==""){
+				return false;
+			}
+			var half=parseInt(this.length/2);
+			for(var i=0;i<half;i++){
+				if(this[i]!=this[this.length-1-i]){
+					return false;
+				}
+			}
+			return true;
+		};
+
+		var str="abccba";
+		console.log(str.isHuiWen());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

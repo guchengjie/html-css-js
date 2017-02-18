@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>内置指令：属性指令</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/07.js"></script>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+		}
+		.red{
+			background-color: red;
+		}
+		.blue{
+			background-color: blue;
+		}
+	</style>
+</head>
+<body ng-controller="DirectiveController">
+	<!-- 
+		ng-href
+		ng-href指令在变量有值时才会生成href属性，可确保链接是正确的
+		而href属性会直接显示，跳转到当前页面，此链接是没意义的
+	 -->
+	<h3>
+		<a href="{{url}}">baidu</a>
+		<br>
+		<a ng-href="{{url}}">baidu2</a> <!-- ng-href绑定作用域数据时需要添加{{}} -->
+		<hr>
+
+		<!-- <img src="{{gulp}}" alt="">
+		<br>
+		<img ng-src="{{gulp}}" alt=""> -->
+	</h3>
+
+	<!-- ng-disabled、ng-readonly、ng-checked、ng-selected -->
+	<input type="text" ng-readonly="isReadOnly"> <!-- ng-readonly绑定作用域数据时不需要添加{{}} -->
+	<button ng-click="doReadOnly()">readonly</button>
+	<hr>
+
+	<div ng-class="cls">div1</div>	
+	<button ng-click="doClass()">class</button>
+	<hr>
+
+	<div ng-style="style">div2</div>
+	<button ng-click="doStyle()">style</button>
+
+
+
+
+
+</body>
+</html>

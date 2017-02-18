@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//字面量（直接量）
+		var str="welcome to itany"; //字符串字面量
+		var array=[12,4,3,23,45]; //数组字面量，使用中括号
+		var fn=function(){ //函数字面量
+			console.log("welcome");
+		};
+
+		//对象字面量，使用大括号，多个属性之间以逗号隔开，属性名和属性值之间以冒号隔开
+		var stu={
+			name:"tom",
+			age:20,
+			"height":180.5,
+			hobby:"睡觉",
+			"js-score":96,
+			study:function(){
+				console.log("我叫"+this.name+"，正在学习！");
+			},
+			run:function(){
+				console.log("正在参加南京马拉松！");
+			}
+		};
+		console.log(stu.name);
+		console.log(stu.height);
+		console.log(stu.hobby);
+		console.log(stu["js-score"]);
+		stu.study();
+		stu.run();
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var nums=new Array(12,4,41,342,54);
+
+		//nums --> Array.prototype --> Object.prototype --> null
+		console.log(nums);
+
+		function Student(name){
+			this.name=name;
+		}
+		var stu1=new Student("tom");
+		//stu1 --> Student.prototype --> Object.prototype --> null
+
+		Student.prototype.hobby="睡觉";
+		console.log(stu1.hobby);
+		Object.prototype.sex="男";
+		console.log(stu1.sex);
+
+
+		var o1=new Object();
+		//o1 --> Object.prototype --> null
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

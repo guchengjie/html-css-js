@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		:root{
+			font-size: 62.5%;
+		}
+		form,div{
+			font-size: 2rem;
+		}
+		input{
+			outline: none;
+		}
+		
+		/* link --> visited --> hover -->active   */
+		/* enabled --> focus */
+		input:enabled{
+			border: 1px dashed blue;
+		}
+		input:disabled{
+			border: 1px dashed green;
+		}
+		input:focus{
+			border: 2px solid red;
+		}
+		input:checked{
+			margin-right: 30px;
+		}
+		input:read-only{
+			border: 1px solid #3fc;
+		}
+		div::selection{/* 并非所有样式都支持 */
+			color: red;
+			font-size: 3rem;
+		}
+	</style>
+</head>
+<body>
+	<form action="">
+		username: <input type="text" name="username" disabled><br>
+		age: <input type="text" name="age" readonly value="18"><br>
+		height: <input type="text" name="height"><br>
+		sex: 
+		<input type="radio" name="sex" id="male"><label for="male">male</label>
+		<input type="radio" name="sex" id="female"><label for="female">female</label>
+		<br>
+		<input type="submit" value="submit">
+	</form>
+	<div>
+		welcome to itany<br>
+		<p>hehe</p>
+		<div>haha</div>
+	</div>
+</body>
+</html>

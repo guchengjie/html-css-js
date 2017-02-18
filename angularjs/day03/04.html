@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>内置指令：init、bind</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/04.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body ng-controller="DirectiveController" ng-cloak>
+	<div ng-init="name='tom';age=21"></div>
+	<h3>{{name}}</h3>
+	<h3 ng-bind="age"></h3>
+	<hr>
+
+	<h3 ng-bind-template="name={{name}},age={{age}}"></h3>
+	<h3>name={{name}},age={{age}}</h3>
+	<hr>
+
+	<!-- 
+		AngularJS展示数据时{{}}和ng-bind指令的区别：
+		使用{{}}时，如果页面渲染较慢，用户可能会看到未被渲染的内容，导致未渲染的闪烁FOUC
+		解决：
+			1.使用ng-bind，推荐
+			2.使用{{}}结合ng-cloak指令
+	 -->
+</body>
+</html>

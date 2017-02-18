@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>内置过滤器：date、lowercase和uppercase</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/02.js"></script>
+</head>
+<body ng-controller="FilterController">
+	<h1>日期过滤器</h1>
+	<h3>日期的默认格式：{{now}}</h3> <!-- GMT格林尼治标准时间 -->
+	<h3>date过滤器的shortDate：{{now|date:'shortDate'}}</h3>
+	<h3>date过滤器的mediumDate：{{now|date:'mediumDate'}}</h3>
+	<h3>date过滤器的longDate：{{now|date:'longDate'}}</h3>
+	<h3>date过滤器的fullDate：{{now|date:'fullDate'}}</h3>
+	<hr>
+	<h3>date过滤器的shortTime：{{now|date:'shortTime'}}</h3>
+	<h3>date过滤器的mediumTime：{{now|date:'mediumTime'}}</h3>
+	<hr>
+	<h3>date过滤器的short：{{now|date:'short'}}</h3>
+	<h3>date过滤器的medium：{{now|date:'medium'}}</h3>
+	<hr>	
+	<h3>date过滤器的自定义格式：{{now|date:'y年MM月d日 H:m:ss sss a EEEE'}}</h3>
+	<br>
+
+	<h1>lowercase和uppercase</h1>
+	<h3>lowercase过滤器：{{"Hello World"|lowercase}}</h3>
+	<h3>uppercase过滤器：{{"Hello World"|uppercase}}</h3>
+</body>
+</html>

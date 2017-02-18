@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//当页面加载完成后再执行，否则获取不到页面中的元素
+		window.onload=function(){ //回调函数
+	 		/*var obj=document.getElementById("baidu"); //DOM对象
+	 		// console.log(obj);
+	 		console.log(obj.href);
+	 		console.log(obj.target);
+	 		console.log(obj.id);
+	 		// console.log(obj.hello);
+	 		console.log(obj.title);	
+
+	 		var obj2=document.getElementsByName("username");
+	 		// console.log(obj2);
+	 		console.log(obj2[0].value);*/
+		};
+
+		function doDiv(){
+			// console.log($("mydiv").innerHTML);		
+			// console.log($("mydiv").innerText);	
+			// $("mydiv").innerHTML="<h1>欢迎来到南京网博</h1>";	
+			$("mydiv").innerText="<h1>欢迎来到南京网博</h1>";	
+		}
+
+		function $(id){
+			return document.getElementById(id);
+		}
+ 	</script>
+</head>
+<body>
+	<a id="baidu" href="http://www.baidu.com" target="_blank" hello="world" title="这是百度链接">百度</a>
+	<input type="text" name="username" value="张三">
+	<br>
+	<input type="button" value="操作" id="btn" onclick="doDiv()">
+	<div id="mydiv">
+		<h2>welcome to itany</h2>
+	</div>
+
+
+
+</body>
+</html>

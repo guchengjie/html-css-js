@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload=function(){
+			$("btn1").onclick=function(){
+				//1.创建新元素
+				var li=document.createElement("li");
+				//2.设置文本内容
+				var text=document.createTextNode("itany4");
+				li.appendChild(text);
+				//3.设置属性
+				li.setAttribute("id", "fourth");
+				//4.找到父元素
+				var ul=document.getElementById("myul");
+				//5.追加
+				ul.appendChild(li);
+			};
+
+			$("btn2").onclick=function(){
+				var tr=document.createElement("tr");
+				// tr.setAttribute("align", "center");
+				tr.align="right"; //HTML特有的
+				for(var i=1;i<=5;i++){
+					var td=document.createElement("td");
+					// td.appendChild(document.createTextNode("td"+i)); //通用方式
+					td.innerHTML="td"+i; //HTML特有的，只能在HTML中使用
+					tr.appendChild(td);
+				}
+				var table=document.getElementById("myTable");
+				table.appendChild(tr);
+			};
+
+			$("btn3").onclick=function(){
+				var li=document.createElement("li");
+				li.innerText="welcome";
+
+				$("myul").insertBefore(li, $("first"));
+			};
+
+			$("btn4").onclick=function(){
+				var itany=$("itany");
+				// console.log("节点名称："+itany.nodeName);
+				// console.log("节点类型："+itany.nodeType);
+				var childs=itany.childNodes; //会包含空白的文本节点
+				/*console.log(childs.length);
+				// console.log(childs);	
+				for(var i=0;i<childs.length;i++){
+					if(childs[i].nodeType==1){
+						console.log(childs[i])
+					}
+				}*/
+
+				/*var f=itany.firstChild;
+				console.log(f);
+				console.log(itany.lastChild);*/
+				// console.log(itany.parentNode.parentNode);
+
+				var attributes=itany.attributes;
+				console.log(attributes.length);
+				for(var i=0;i<attributes.length;i++){
+					// console.log(attributes[i]);
+					console.log("属性名："+attributes[i].name+"，属性值："+attributes[i].value);
+				}
+			};
+		};
+
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="添加一行" id="btn1">
+	<input type="button" value="向表格中添加一行" id="btn2">
+	<input type="button" value="在first前面插入一行" id="btn3">
+	<input type="button" value="获取元素" id="btn4">
+	<hr>
+
+	<ul id="myul">
+		<li id="first">itany1</li>
+		<li>itany2</li>
+		<li>itany3</li>
+	</ul>
+	<br>
+	<br>
+
+	<!-- table#myTable>(thead>tr>th{th$}*5)+tbody#tb>(tr>td{td$}*5)*3 -->
+	<table id="myTable" width="400px" border="1px">
+		<thead>
+			<tr>
+				<th>th1</th>
+				<th>th2</th>
+				<th>th3</th>
+				<th>th4</th>
+				<th>th5</th>
+			</tr>
+		</thead>
+		<tbody id="tb">
+			<tr id="itany" name="mytr"><td>td1</td>
+				<td>td2</td>
+				<td>td3</td>
+				<td>td4</td>
+				<td>td5</td></tr>
+			<tr>
+				<td>td1</td>
+				<td>td2</td>
+				<td>td3</td>
+				<td>td4</td>
+				<td>td5</td>
+			</tr>
+			<tr>
+				<td>td1</td>
+				<td>td2</td>
+				<td>td3</td>
+				<td>td4</td>
+				<td>td5</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+
+
+
+
+
+</body>
+</html>

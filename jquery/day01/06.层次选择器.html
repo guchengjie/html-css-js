@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		$(function(){
+			$("#btn1").click(function(){
+				$("div#first span").css("background","red");
+				console.log($("div#first span").length);
+			});
+
+			$("#btn2").click(function(){
+				$("div#first > span").css("background","red");
+				console.log($("div#first > span").length);
+			});
+
+			$("#btn3").click(function(){
+				$("div#first + p").css("background","red");
+				console.log($("div#first + p").length);
+			});
+
+			$("#btn4").click(function(){
+				$("div#first ~ p").css("background","red");
+				console.log($("div#first ~ p").length);
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="后代选择器" id="btn1">
+	<input type="button" value="子选择器" id="btn2">
+	<input type="button" value="相邻选择器" id="btn3">
+	<input type="button" value="兄弟选择器" id="btn4">
+	<hr>
+	<p>p0</p>
+	<div id="first">div1
+		<p>
+			<span>span1</span>
+		</p>
+		<span>span2</span>
+		<span>span3</span>
+	</div>
+	<div id="second">div2</div>
+	<div class="itany">div3</div>
+	<div class="hello">div4</div>
+	<div class="itany">div5</div>
+	<p>p1</p>
+	<p>p2</p>
+	<p class="hello">p3</p>
+	<p>p4</p>
+	<p>p5</p>
+</body>
+</html>

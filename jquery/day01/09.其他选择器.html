@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("input[type=button]:first").click(function(){
+				// console.log($("div:hidden").length)
+				console.log($("body :hidden").length)
+			});
+
+			$("input[type=button]:eq(1)").click(function(){
+				// var obj=$(":input");
+				// var obj=$(":text");
+				// var obj=$(":radio");
+				var obj=$(":checkbox");
+				obj.css("background","red");
+				console.log(obj.length);
+
+				// console.log(obj.val());
+				/*for(var i=0;i<obj.length;i++){
+					// console.log(obj[i].value);
+					console.log($(obj[i]).val());
+				}*/
+
+
+				//方式1：使用对象的方法来循环，称为对象函数
+				/*obj.each(function(index,item){
+					// console.log(index+"="+item.value);
+					console.log(item.value);
+				});*/
+
+				//方式2：使用工具方法来循环，称为工具函数
+				$.each(obj,function(index,item){
+					console.log(index+"="+item.value);
+				});
+
+			});
+
+			$(":button:eq(2)").click(function(){
+				// var obj=$(":checkbox:checked");
+				var obj=$(":selected");
+				obj.css("background","red");
+				console.log(obj.length);
+
+				$.each(obj,function(index,item){
+					console.log(index+"="+item.value);
+				});
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="选择所有不可见div">
+	<input type="button" value="表单选择器">
+	<input type="button" value="获取被选中的表单元素">
+	<hr>
+
+	<div>div1</div>
+	<div style="display:none">div2</div>
+	<div>div3</div>
+	<div style="display:none">div4</div>
+	<input type="hidden">
+	<hr>
+
+	<h1>用户注册</h1>
+	<form action="success.html" onsubmit="return checkForm()">
+		<table>
+			<tr>
+				<td>用户名：</td>
+				<td>
+					<input type="text" id="username" placeholder="请输入用户名" onblur="checkUsername()">
+					<span id="usernameInfo"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td>
+					<input type="password" id="pwd" placeholder="请输入密码" onblur="checkPwd()">
+					<span id="pwdInfo"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td>
+					<input type="password" id="repwd" placeholder="请输入确认密码" onblur="checkRepwd()">
+					<span id="repwdInfo"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>出生日期：</td>
+				<td>
+					<input type="text" id="birthday" placeholder="请输入出生日期" onblur="checkBirthday()">
+					<span id="birthdayInfo"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>性别：</td>
+				<td>
+					<input type="radio" name="sex" value="male">男
+					<input type="radio" name="sex" value="female">女
+				</td>
+			</tr>
+			<tr>
+				<td>爱好：</td>
+				<td>
+					<input type="checkbox" name="hobby" value="eat">吃饭
+					<input type="checkbox" name="hobby" value="sleep">睡觉
+					<input type="checkbox" name="hobby" value="doudou">打豆豆
+				</td>
+			</tr>
+			<tr>
+				<td>学历：</td>
+				<td>
+					<select name="degree">
+						<option value="0">--学历--</option>
+						<option value="1">大专</option>
+						<option value="2">本科</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="注册">&nbsp;&nbsp;
+					<input type="reset" value="重置">&nbsp;&nbsp;
+				</td>
+			</tr>
+		</table>
+
+	</form>
+</body>
+</html>

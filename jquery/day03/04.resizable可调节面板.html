@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script src="jqueryui/jquery-ui.js"></script>
+	<link rel="stylesheet" href="jqueryui/jquery-ui.css">
+	<script>
+		$(function(){
+			$("#mydiv").resizable({
+				animate:true,
+				animateDuration:3000,
+				helper: "resizable-helper"
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="mydiv" class="ui-widget-content">
+		<p class="ui-widget-header">这是标题</p>
+		<h3>h3_1</h3>
+		<h3>h3_2</h3>
+		<h3>h3_3</h3>
+	</div>
+</body>
+</html>

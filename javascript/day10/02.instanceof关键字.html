@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		function Person(name){
+			this.name=name;
+		}
+
+		function Dog(){
+
+		}
+
+		var num=34;
+		var name="tom";
+		var flag=true;
+		var a=null;
+		var nums=[4,34,23];
+		var stu=new Object();
+		var p=new Person();
+		var dog=new Dog();
+
+		/*console.log(typeof num);
+		console.log(typeof name);
+		console.log(typeof flag);
+		console.log(typeof a);
+		console.log(typeof nums);
+		console.log(typeof stu);
+		console.log(typeof p);
+*/
+		// console.log(nums instanceof Person);
+		// console.log(nums instanceof Array);
+		// console.log(p instanceof Array);
+		// console.log(p instanceof Person);
+		// console.log(p instanceof Dog);
+		console.log(dog instanceof Person);
+		console.log(dog instanceof Array);
+		console.log(dog instanceof Dog);
+
+		if(dog instanceof Dog){
+			console.log("你是一条狗");
+		}
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

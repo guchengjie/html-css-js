@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1.定义无参函数
+		function calc(){
+			var sum=0;
+			for(var i=1;i<=100;i++){
+				sum+=i;
+			}
+			console.log("从1到100之和为："+sum);
+		}
+
+		//2.调用函数
+		// calc();
+
+
+		//定义带参的函数
+		function calc2(n){ //n为形式上的参数，称为形参
+			var sum=0;
+			for(var i=1;i<=n;i++){
+				sum+=i;
+			}
+			console.log("从1到"+n+"之和为："+sum);
+		}
+
+		// calc2(50); //50为实际上参与计算的参数，称为实参
+
+		// calc2(200);
+
+		// calc2(100);
+
+
+		//定义带多个参数的函数
+		function calc3(m,n){  //多个参数以逗号隔开
+			var sum=0;
+			for(var i=m;i<=n;i++){
+				sum+=i;
+			}
+			console.log("从"+m+"到"+n+"之和为："+sum);
+		}
+
+		calc3(5,50);
+
+		calc3(10,30);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

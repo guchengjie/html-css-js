@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		$(function(){
+			// $("ul li:eq(1)").css("color","red");
+
+			/*var n=Number(prompt("请输入您要获取第几个li："));
+			// $("ul li:eq("+(n-1)+")").css("color","red");
+			$("ul li").eq(n-1).css("color","red");*/
+
+			// $("ul li").first().css("color","red");
+			// $("ul li").last().css("color","red");
+
+			//filter() 对当前选中元素进行过滤筛选
+			// $("li").filter(".hello").css("color","blue");
+			// $("li").filter(":even").css("color","blue");
+			/*$("p").filter(function(index) {
+			  if($("ol", this).length == 0){
+			  	return $("ol", this);
+			  }
+			}).css("color","red");*/
+
+
+			//find() 在当前元素内部进行查找
+			// $("ul").find(".hello").css("color","red");
+
+			//slice()
+			// $("li").slice(3).css("color","red");
+			$("li").slice(3,5).css("color","red");
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li id="first">itany1
+			<span class="hello">span1</span>
+		</li>
+		<li>itany2</li>
+		<li>itany3</li>
+		<li class="hello">itany4</li>
+		<li>itany5</li>
+		<li>itany6</li>
+		<li>itany7</li>
+		<li>itany8</li>
+	</ul>
+
+	<p>
+		<ol>
+			<li>Hello</li>
+		</ol>
+	</p>
+	<p>How are you?</p>
+</body>
+</html>

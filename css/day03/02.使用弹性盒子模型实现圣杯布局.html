@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		:root{
+			font-size: 62.5%;
+		}
+		div.wrap{
+			width: 80%;
+			border: 1px solid red;
+			margin: 0 auto;
+			display: flex;
+		}
+		aside{
+			width: 200px;
+			border: 1px solid blue;
+		}
+		article{
+			border: 1px solid blue;
+			flex: 1;/* 占居剩余宽度 */
+			order: 2;
+		}
+		aside:first-child{
+			order: 1;
+		}
+		aside:last-child{
+			order: 3;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<article>主体内容</article>
+		<aside>左边栏</aside>
+		<aside>右边栏</aside>
+	</div>
+</body>
+</html>

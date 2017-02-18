@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//计算从1到指定数字之和，如果数字大于8，则只统计到8的总和，返回最终结果
+		/*function calc(num){
+			var sum=0;
+			for(var i=1;i<=num;i++){
+				if(i>8){
+					break;
+				}
+				sum+=i;
+			}
+			return sum;
+		}
+
+		function calc2(num){
+			var sum=0;
+			if(num>8){
+				num=8;
+			}
+			for(var i=1;i<=num;i++){
+				sum+=i;
+			}
+			return sum;
+		}	
+
+		var sum = calc2(3);
+		console.log(sum);*/
+
+		//return关键字的作用：1.返回函数执行的结果   2.结束函数的执行
+		//计算两数之和并返回结果，如果两数之和大于20，则程序立即结束
+		function calc(num1,num2){
+			var sum=num1+num2;
+			if(sum>20){
+				console.log("------------");
+				return;
+			}
+			console.log("**********");
+			return sum;
+		}
+
+		console.log(calc(3,25));
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

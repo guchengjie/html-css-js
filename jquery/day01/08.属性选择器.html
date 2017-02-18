@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		$(function(){
+			$("input:first").click(function(){
+				var obj=$("p[id]");
+				obj.css("color","red");
+				console.log(obj.length);
+			});
+
+			$("input:eq(1)").click(function(){
+				var obj=$("[class='wbs16092']");
+				obj.css("color","red");
+				console.log(obj.length);
+			});
+
+			$("input:eq(2)").click(function(){
+				var obj=$("p[class!='wbs16092']");
+				obj.css("color","red");
+				console.log(obj.length);
+			});
+
+			$("input:eq(3)").click(function(){
+				// var obj=$("[class^=wbs]");
+				// var obj=$("[class$='2']");
+				// var obj=$("[class*='2']");
+				var obj=$("[id][class^=wbs][title=hehe]");
+				obj.css("color","red");
+				console.log(obj.length);
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="选择包含id属性的p元素">
+	<input type="button" value="选择class属性的值等于wbs16092的元素">
+	<input type="button" value="选择class属性的值不等于wbs16092的p元素">
+	<input type="button" value="选择class属性的值以wbs开头的元素">
+	<hr>
+
+	<p class="wbs16092" id="itany" title="hehe">welcome to itany</p>
+	<div>
+		<p id="hello" title="hehe">hello p</p>
+	</div>
+	<div>
+		<span class="wbs1111" id="world">span1</span>
+		<span class="wbs16092">span2</span>
+	</div>
+	<span class="wbs16092">span3</span>
+	<p id="first">p1</p>
+	<p class="wbs16082">p2</p>
+	<p>p3</p>
+	<p class="wbs16201">p4</p>
+	<p>p5</p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/include.js"></script>
+	<script>
+		$(function(){
+			$("#btn1").button({
+				// disabled:true,
+				icons:{
+					primary:"ui-icon-flag",
+				},
+			});
+
+			$("#btn2").button({
+				icons:{
+					// primary:"ui-icon-flag",
+					secondary:"ui-icon-gear",
+				},
+				label:"wbs16092",
+				text:false,
+			});
+
+			$("form").buttonset();
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="默认按钮">
+	<input type="button" value="input按钮" id="btn1">
+	<br>
+	<br>
+	<button id="btn2">button按钮</button>
+	<hr>
+
+	<form action="">
+		性别：
+		<input type="radio" name="sex" id="male" checked><label for="male">男</label>
+		<input type="radio" name="sex" id="female"><label for="female">女</label>
+		<br>
+		<br>
+		爱好：
+		<input type="checkbox" name="hobby" id="eat"><label for="eat">吃饭</label>
+		<input type="checkbox" name="hobby" id="sleep"><label for="sleep">睡觉</label>
+		<input type="checkbox" name="hobby" id="doudou"><label for="doudou">疼豆豆</label>
+
+
+	</form>
+</body>
+</html>

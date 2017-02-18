@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		:root{
+			font-size: 62.5%;
+		}
+		div,span{
+			font-size: 2rem;
+		}
+
+		/* 属性选择器 */
+		/* div[id]{	
+			color: red;
+		}
+		div[class="c2"]{
+			color: yellow;
+		}
+		div[class=c1]{
+			color: blue;
+		} */
+		/* div[class^=c]{
+			color: green;
+		} */
+		/* div[class$="1"]{
+			color: red;
+		} */
+		/* div[class*="a"]{
+			color: red;
+		} */
+		/* div[class*="a"][id^=wo]{
+			color: red;
+		} */
+		/* span:not(div){
+			color: red;
+		} */
+
+		/*
+			层次选择器：
+			~ 表示查找前面有兄弟的元素
+			+ 表示查找前面紧邻有兄弟的元素
+			空格表示查找后代元素
+			> 表示查找子级元素
+		*/
+		/* h1~p{
+			color: red;
+		} */
+		/* h1+p{
+			color: red;
+		} */
+		/* h1 p{
+			color: red;
+		} */
+		h1>p{
+			color: red;
+		}
+		:target{
+			color: red;
+			font-size: 4rem;
+		};
+	</style>
+</head>
+<body>
+	<div class="c1">div1</div>
+	<div class="b2">div2</div>
+	<div class="a3">div3</div>
+	<div class="cab1" id="world">div4</div>
+	<div class="c1">div5</div>
+	<div id="itany">div6</div>
+	<div id="hello">div7</div>
+	<div>div8</div>
+
+	<span>span1</span>
+	<span>span2</span>
+	<span>span3</span>
+	<span>span4</span>
+	<span>span5</span>
+	
+	<p>p1</p>
+	<p>p2</p>
+	<p>p3</p>
+	<p>p4</p>
+	<hr>
+	<p>pp</p>
+	<h2>h2</h2>
+	<h1>h1
+		<p>ppp</p>
+		<div>
+			<p>pppp</p>
+		</div>
+	</h1>
+	<p>p5</p>
+	<h2>h22</h2>
+
+	<!-- <a href="04.新增选择器：状态相关.html#bbb">跳转</a> -->
+	<a href="#aaa">跳转</a>
+	<p>p01</p>
+	<p>p02</p>
+	<p>p03</p>
+	<p>p04</p>
+	<p>p05</p>
+	<p>p06</p>
+	<p>p07</p>
+	<p>p08</p>
+	<p>p09</p>
+	<p>p10</p>
+	<p>p11</p>
+	<p>p12</p>
+	<p>p13</p>
+	<p>p14</p>
+	<p>p15</p>
+	<p>p16</p>
+	<p>p17</p>
+	<p>p18</p>
+	<p>p19</p>
+	<p>p20</p>
+	<p>p21</p>
+	<p>p22</p>
+	<p>p23</p>
+	<p>p24</p>
+	<p>p25</p>
+	<p>p26</p>
+	<p>p27</p>
+	<p>p28</p>
+	<p>p29</p>
+	<p>p30</p>
+	<p>p31</p>
+	<p>p32</p>
+	<p>p33</p>
+	<p>p34</p>
+	<p>p35</p>
+	<p>p36</p>
+	<p>p37</p>
+	<p>p38</p>
+	<p>p39</p>
+	<p>p40</p>
+	<p>p41</p>
+	<p>p42</p>
+	<p>p43</p>
+	<p>p44</p>
+	<p>p45</p>
+	<p>p46</p>
+	<p>p47</p>
+	<p>p48</p>
+	<p>p49</p>
+	<p>p50</p>
+	<p>p51</p>
+	<p>p52</p>
+	<p>p53</p>
+	<p>p54</p>
+	<p>p55</p>
+	<p>p56</p>
+	<p>p57</p>
+	<p>p58</p>
+	<p>p59</p>
+	<p>p60</p>
+	<p>p61</p>
+	<p>p62</p>
+	<p>p63</p>
+	<p>p64</p>
+	<p>p65</p>
+	<p>p66</p>
+	<p>p67</p>
+	<p>p68</p>
+	<p>p69</p>
+	<p>p70</p>
+	<p>p71</p>
+	<p>p72</p>
+	<p>p73</p>
+	<p>p74</p>
+	<p>p75</p>
+	<p>p76</p>
+	<p>p77</p>
+	<p>p78</p>
+	<p>p79</p>
+	<p>p80</p>
+	<p>p81</p>
+	<p>p82</p>
+	<p>p83</p>
+	<!-- <div id="aaa">aaaaaaa</div> -->
+	<a name="aaa">aaaaa</a>
+	<p>p84</p>
+	<p>p85</p>
+	<p>p86</p>
+	<p>p87</p>
+	<p>p88</p>
+	<p>p89</p>
+	<p>p90</p>
+	<p>p91</p>
+	<p>p92</p>
+	<p>p93</p>
+	<p>p94</p>
+	<p>p95</p>
+	<p>p96</p>
+	<p>p97</p>
+	<p>p98</p>
+	<p>p99</p>
+	<p>p100</p>
+	
+
+
+
+
+</body>
+</html>

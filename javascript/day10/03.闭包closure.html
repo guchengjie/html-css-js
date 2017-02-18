@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#mydiv{
+			width: 300px;
+			height: 300px;
+			border: 1px solid #ccc;
+		}
+	</style>
+	<script>
+		//在一个函数内部又定义了一个函数
+		/*function f1(){
+			var a=99;
+			console.log(a);
+			function f2(){
+				var b=66;
+				console.log(b);
+				console.log(a); //在内部函数f2中可以访问到外部函数f1中的局部变量a
+			}
+			// f2();
+			return f2;
+		}
+
+		var fn=f1();
+		fn();*/
+		
+		function doAdd(){
+			for(var i=1;i<=15;i++){
+				/*var btn=document.createElement("input");
+				btn.type="button";
+				btn.value="按钮"+i;
+				btn.onclick=function(){
+					// console.log(this.value);
+					// console.log(btn.value);
+					// console.log("您点击了按钮"+i);	
+					console.log(i);
+				};
+				$("mydiv").appendChild(btn);*/
+
+				//解决方式1：不在函数内部定义函数，将函数定义在外面，在函数内部调用
+				// createButton(i);
+
+				//解决方式2：为元素附加属性，用来存储变量
+				var btn=document.createElement("input");
+				btn.type="button";
+				btn.value="按钮";
+				btn.num=i;
+				btn.onclick=function(){
+					console.log(this.value);
+					console.log("您点击了按钮"+this.num);	
+				};
+				$("mydiv").appendChild(btn);
+				
+
+			}
+		}
+
+		function createButton(num){
+			var btn=document.createElement("input");
+			btn.type="button";
+			btn.value="按钮"+num;
+			btn.onclick=function(){
+				console.log("您点击了按钮"+num);	
+			};
+			$("mydiv").appendChild(btn);
+		}
+
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="向div中添加多个按钮" onclick="doAdd()">
+	<br>
+	<br>
+
+	<div id="mydiv"></div>
+</body>
+</html>

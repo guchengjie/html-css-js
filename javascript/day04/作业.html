@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	/*
+		有一个数列：8，4，2，1，23，344，12
+		1.循环输出数组的值
+		2.求数列中所有数值的和
+		3.将最大值放到最前面，最小值放到最后面
+	*/	
+	// 1.循环输出数组的值
+		// var nums=new Array(8,4,2,1,23,344,12)
+		// for(var i=0;i<nums.length;i++){
+		// 	console.log(nums[i])
+		// }
+		// 2.求数列中所有数值的和
+		// var sum=0
+		// var nums=new Array(8,4,2,1,23,344,12)
+		// for(var i=0;i<nums.length;i++){
+		// 	sum=sum+nums[i]
+		// }
+		// console.log("数值和："+sum);
+
+		// 3.将最大值放到最前面，最小值放到最后面
+		 /*var nums=new Array(18,4,2,1,23,344,22)
+		 var a=0; //记录最大值在数组中的索引
+		 var b=0; //记录最小值在数组中的索引
+		 for(var i=0;i<nums.length;i++){
+		 	if(nums[i]>nums[a]){
+		 		a=i; //记录最大值在数组中的索引		 		
+		 	}
+		 	if(nums[i]<nums[b]){
+		 		b=i; //记录最小值在数组中的索引
+		 	}
+		 }
+		//交换最大值的位置：nums[a]、nums[0]
+		var temp=nums[a];
+		nums[a]=nums[0];
+		nums[0]=temp;
+		//交换最小值的位置：nums[b]、nums[nums.length-1]
+		temp=nums[b];
+		nums[b]=nums[nums.length-1];
+		nums[nums.length-1]=temp;
+
+		console.log(nums);*/
+		
+	
+	//2.接收5位学生的考试成绩，保存到数组中，输出考试成绩的最高分、最低分
+	var scores=new Array();
+	for(var i=0;i<5;i++){
+		scores[i]=prompt("请输入第"+(i+1)+"位学生的考试成绩");
+		
+	}
+	var max=scores[0],min=scores[0];
+	for(var j=0;j<5;j++){
+		if(max<scores[j]){
+			max=scores[j];
+		}
+		if(scores[j]<min){
+			min=scores[j];
+		}
+	}
+	document.write("考生成绩依次为："+scores+"<br>");
+	document.write("最高分为："+max+"<br>");
+	document.write("最低分为："+min);
+	
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

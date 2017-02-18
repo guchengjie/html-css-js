@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var o1={
+			name:"tom",
+			age:20,
+			study:function(){
+				console.log(this.name+"正在学习！");
+			}
+		};
+
+		var o2={
+			height:180.5,
+			sayHello:function(){
+				console.log("你好！");
+			}
+		};
+
+		//通过for...in循环，将o1的属性添加到o2中，此时可以认为o2继承了o1的属性
+		for(var index in o1){
+			o2[index]=o1[index];
+		}
+
+		console.log(o2.height);
+		o2.sayHello();
+		console.log(o2.name);
+		o2.study();
+
+
+		var o3={
+			weight:170,
+			sex:"男"
+		};
+
+		//简化继承操作
+		o2.extend=function(object){
+			for(var index in object){
+				o2[index]=object[index];
+			}
+		};
+		//将o3的属性添加到o2中
+		o2.extend(o3);
+		console.log(o2.sex);
+
+
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>button</title>
+	<script src="jquery/jquery-1.9.0.js"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js"></script>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<!-- 
+		1.4版本之后默认只支持两种主题：a、b
+		引用经典主题文件，可支持5种主题：a-e
+	 -->
+	<link rel="stylesheet" href="jqm/theme/theme-classic.css">
+</head>
+<body>
+	<div data-role="page" data-theme="b">
+		<div data-role="header">
+			<h1>header</h1>
+			<a href="#">按钮4</a>
+			<a href="#">按钮5</a>
+			<a href="#">按钮7</a>
+		</div>
+		<div class="ui-content">
+			content
+			<button data-theme="b">按钮1</button>
+			<input type="button" value="按钮2" data-icon="star" data-iconpos="notext">
+			<a href="#" data-role="button" data-corners="false" data-icon="home" data-iconshadow="true" data-shadow="false">按钮3</a>
+			<button data-inline="true">按钮1</button>
+			<button data-inline="true">按钮2</button>
+			<button data-mini="true" data-theme="e">按钮3</button>
+
+			<h1>按钮组</h1>
+			<div data-role="controlgroup" data-type="horizontal">
+				<a href="#" data-role="button">btn1</a>
+				<a href="#" data-role="button">btn2</a>
+				<a href="#" data-role="button">btn3</a>
+			</div>
+			<h1>单选按钮组</h1>
+			<div data-role="controlgroup" data-type="horizontal">
+				<input type="radio" name="sex" id="male"><label for="male">男</label>
+				<input type="radio" name="sex" id="female"><label for="female">女</label>
+			</div>
+		</div>
+		<div data-role="footer">
+			<h1>footer</h1>
+			<a href="#">按钮6</a>
+			<a href="#" class="ui-btn-right">按钮8</a>
+			<a href="#">按钮9</a>
+		</div>
+	</div>
+</body>
+</html>

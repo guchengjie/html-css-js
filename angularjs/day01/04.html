@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>数据绑定</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/ng04.js"></script>
+</head>
+<body ng-controller="MyController">
+	<!-- 
+		使用ng-model指令实现数据双向绑定
+		即页面视图的输入可以传递到模型Model中，模型Model中数据也可以传递到页面视图中
+		表单页面一般都双向绑定
+	 -->
+	用户名：<input type="text" ng-model="username">
+	<br>
+	
+	<!-- 
+		单向绑定的两种方式：
+		1.{{}}表达式：获取不到数据时原样显示
+		2.ng-bind指令：获取不到数据时不显示，推荐
+		HTML的容器标签一般都单向绑定
+	 -->
+	<h1>{{username}}</h1>
+	<h1 ng-bind="username"></h1>
+</body>
+</html>

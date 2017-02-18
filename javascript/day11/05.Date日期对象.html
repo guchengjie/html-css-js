@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var today=new Date();
+		// console.log(today);
+		// var d1=new Date("2016-11-11 12:30:28");
+		// var d1=new Date("2016/2/25 12:30:28");
+		// console.log(d1); 
+		// var d2=new Date(2016,11,11,12,30,28,120);
+		// var d2=new Date(2016,2,11);
+		// console.log(d2);
+		/*var d3=new Date(45649884133);
+		console.log(d3);*/
+		console.log(today);
+		/*document.write(today);*/
+
+		var year=today.getFullYear();
+		var month=today.getMonth()+1;
+		var date=today.getDate();
+		var hour=today.getHours();
+		var minute=today.getMinutes();
+		var second=today.getSeconds();
+		var milliSeconds=today.getMilliseconds();
+		var day=today.getDay();
+		// console.log(year+"年"+month+"月"+date+"日 "+hour+":"+minute+":"+second+":"+milliSeconds+" ");
+		// console.log(day);
+
+		var time=today.getTime();
+		// console.log(time);
+ 
+		//计算建国多少天了？1949.10.1
+		var date1=new Date("1949-10-1");
+		var minus=today.getTime()-date1.getTime();
+		// console.log(minus);
+		var days=Math.ceil(minus/(1000*60*60*24));
+		// console.log(days);
+
+		//设置时间
+		/*today.setDate(8);
+		console.log(today);*/
+
+		console.log(today.toUTCString());
+		console.log(today.toLocaleString());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

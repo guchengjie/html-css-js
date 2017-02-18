@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="iviewer-0.7.11/jquery.iviewer.css">
+	<script src="js/jquery-1.9.0.js"></script>
+	<script src="iviewer-0.7.11/jqueryui.js"></script>
+	<script src="iviewer-0.7.11/jquery.mousewheel.js"></script>
+	<script src="iviewer-0.7.11/jquery.iviewer.js"></script>
+	<script>
+		$(function(){
+			$("#img").iviewer({
+				src:"images/apple.gif",
+				ui_disabled:true,
+				zoom_animation:false,
+			});
+		});
+	</script>
+	<style>
+		#img{
+			position: relative;
+			width: 50%;
+			height: 500px;
+			border: 1px solid #ccc;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="img"></div>
+</body>
+</html>

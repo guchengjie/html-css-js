@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//一.转换为number
+
+		var a="12";
+		
+		//方式1：使用Number()
+		// a=Number(a);
+		// console.log(typeof a);
+		// console.log(a);
+		// console.log(Number("13.5"));
+		// console.log(Number("hello"));
+		// console.log(Number("hello123"));
+		// console.log(Number("123hello"));
+
+		//方式2：使用parseInt()
+		/*var b=parseInt("19");
+		console.log(typeof b);
+		console.log(b);
+		console.log(parseInt("13.5"));
+		console.log(parseInt("hello"));
+		console.log(parseInt("hello123"));
+		console.log(parseInt("123hello"));*/
+
+		//方式3:使用parseFloat()
+		/*var b=parseFloat("19");
+		console.log(typeof b);
+		console.log(b);
+		console.log(parseFloat("13.5"));
+		console.log(parseFloat("hello"));
+		console.log(parseFloat("hello123"));
+		console.log(parseFloat("123hello"));*/
+
+
+		//二、转换为string
+		// var x=12;
+		// console.log(typeof x);
+
+		//1.拼接空字符串
+		/*x=x+"";
+		console.log(typeof x);*/
+
+		//2.使用String()
+		// x=String(x);
+
+		//3.使用toString()
+		// x=x.toString();
+
+
+		//三、转换为boolean
+		// var y="aaa";
+		// var y="";
+		// var y=12;
+		// var y=0;
+		// var y;
+		// var y=null;
+		// var y=false;
+		/*var y=NaN;
+		console.log(typeof y);
+
+		y=Boolean(y);
+		console.log(typeof y);
+		console.log(y);*/
+
+		//结论：false、0、空字符串、null、undefined、NaN会被转换为false，其他都会被转换为true
+
+
+		//自动类型转换
+		var z="12";
+		// z=z*1;
+		z=+z;
+		console.log(typeof z);
+		console.log(z);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

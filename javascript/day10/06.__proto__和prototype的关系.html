@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function User(name){
+			this.name=name;
+			this.show=function(){
+				console.log("姓名："+name);
+			};
+		}
+
+		User.prototype.hobby="睡觉";
+
+		var user=new User("tom");
+		// console.log(user);
+		// console.log(user.hobby);	
+		// console.log(User.prototype);
+		// console.log(user.__proto__);
+		// console.log(User.prototype===user.__proto__);
+		// console.log(user.__proto__.hobby);
+
+
+		//判断对象的类型
+		function Student(name){
+			this.name=name;
+			this.show=function(){};
+		}
+		function Person(){}
+		function Pig(){}
+
+		var o1=new Array();
+		var o2=new Object();
+		var o3=new Student("tom");
+		var o4=new Pig();
+		var o5=new Person();
+		var o6=new Date();
+
+		// console.log(o3 instanceof Student);
+		// console.log(o6 instanceof Date);
+
+		//结论：对象关联的构造函数的名称就是当前对象的类型
+
+
+		//o3
+		Student.prototype.hobby="睡觉";
+		console.log(o3);
+		console.log(o3.hobby);	
+		console.log(o3.constructor); //通过constructor属性可以获取到当前对象的构造函数
+		console.log(o3.constructor.name);	
+
+		console.log(o5.constructor); //每个对象都有constructor属性，该属性由其原型对象提供	
+		console.log(o6.constructor);	
+
+		console.log(o2.constructor.name);
+		console.log(o1.constructor.name);
+		console.log(o4.constructor.name);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

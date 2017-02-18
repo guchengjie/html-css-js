@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*var num = 10;
+		fun();
+		function fun(){
+		   console.log(num);
+		   var num = 20;
+		}*/
+
+		//第一步：预解析（全局作用域）
+		/*var num;
+		function fun(){
+			//第三步：当执行函数时，再次进行预解析（局部作用域）
+			var num;
+
+			//第四步：一行一行执行代码
+		   console.log(num);
+		   num = 20;
+		}
+
+		//第二步：一行一行执行代码
+		num = 10;
+		fun();
+		*/
+
+
+		//思考二
+		/*var a = 18;
+		f1();
+		function f1(){
+		   var b=9;
+		   console.log(a);
+		   console.log(b);
+		   var a = '123';
+		}*/
+
+		/*var a;
+		function f1(){
+		    var b;
+		    var a;
+
+		   b=9;
+		   console.log(a);  //undefined
+		   console.log(b);  //9
+		   a = '123';
+		}	
+
+		a = 18;
+		f1();*/
+		
+
+		//思考三：
+		/*f1();
+		console.log(c);
+		console.log(b);
+		console.log(a);
+		function f1(){
+		   var a = b = c = 9;
+		   console.log(a);
+		   console.log(b);
+		   console.log(c);
+		}*/
+
+		function f1(){
+   		   var a;
+
+		   // var a = b = c = 9;
+		   a=9;
+		   b=9;
+		   c=9;
+		   console.log(a); 
+		   console.log(b);
+		   console.log(c);
+		}
+
+		f1();
+		console.log(c);
+		console.log(b);
+		console.log(a);
+		
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

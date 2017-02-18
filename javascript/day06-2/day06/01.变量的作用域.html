@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var name="tom"; //全局变量，在任何位置都可以访问
+		// console.log(name);
+
+
+		function show1(){
+			var age=20; //局部变量，只在当前函数中可以访问
+			sex="male"; //全局变量，在函数内没有使用var声明，而是直接使用的变量，也是全局变量
+			console.log(name);
+			console.log(age);
+			console.log(sex);
+		}
+		// show1();	
+		// // console.log(age);
+		// console.log(sex);
+
+		function show2(){
+			console.log(name);
+			// console.log(age);
+			console.log(sex);
+		}
+		// show2();
+
+
+		//如果全局变量和局部变量同名
+		/*var hobby="吃饭";
+
+		function show3(){
+			var hobby="睡觉";
+			console.log("局部变量："+hobby); //就近原则
+			console.log("全局变量："+window.hobby);
+			console.log("全局变量："+this.hobby); //引处this所指代的就是window
+		}
+		show3();
+		console.log(hobby);*/
+
+
+		//JavaScript中没有块级作用域的概念
+		if(5>2){
+			console.log("呵呵");
+			// var a=6;
+			let a=6; //在ES6中可以使用let关键字来定义变量，此时变量支持块级作用域，但需要浏览器支持
+			console.log(a);
+		}
+		console.log(a);
+
+		/*for(var i=1;i<=10;i++){
+			// console.log(i);
+		}
+		console.log(i);*/
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

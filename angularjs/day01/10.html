@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>事件传播机制</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/ng10.js"></script>
+</head>
+<body>
+	<div ng-controller="EventController">
+		<button ng-click="doAdd()">按钮1</button>
+		count1={{count}}
+		<hr>
+
+		<div ng-controller="EventController">
+			<button ng-click="doAdd()">按钮2</button>
+			count2={{count}}
+			<br>
+			<!-- 触发MyClick事件，并将该事件同时提交给父级控制器，父级控制器也要执行该事件 -->
+			<button ng-click="$emit('MyClick')">上传emit</button>
+			<!-- 触发Click事件，并将该事件同时广播给子级控制器，子级控制器也要执行该事件 -->
+			<button ng-click="$broadcast('MyClick')">下传broadcast</button>
+			<hr>
+
+			<div ng-controller="EventController">
+				<button ng-click="doAdd()">按钮3</button>
+				count3={{count}}
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

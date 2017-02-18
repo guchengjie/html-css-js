@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function User(name){
+			this.name=name;
+			this.show=function(){
+				console.log("姓名："+name);
+			};
+		}
+		User.prototype.run=function(){
+			console.log(this.name+"正在奔跑！"); //this表示当前对象，即调用此方法的对象
+		};
+
+		/*var user1=new User("tom");
+		// console.log(User.prototype);
+		user1.run();
+		var user2=new User("jack");
+		user2.run();*/
+
+
+		//扩展Array类型，添加新的属性和方法
+		Array.prototype.hobby="睡觉";
+		Array.prototype.reverseSort=function(){
+			this.sort();
+			this.reverse();
+		};
+		Array.prototype.show=function(){
+			console.log("数组中共有"+this.length+"个元素，分别如下：");
+			for(var i=0;i<this.length;i++){
+				console.log("第"+(i+1)+"个元素为："+this[i]);
+			}
+		};
+
+		/*var array=new Array();
+		// console.log(Array.prototype);
+		console.log(array.hobby);*/
+		var names=["tom","alice","jack","mike"];
+		/*names.sort();
+		names.reverse();*/
+		names.reverseSort();
+		// console.log(names);
+		// names.show();
+
+		var nums=[23,4,2,546,23,5,6,26];
+		// nums.show();
+
+		//扩展String类型，添加一个方法，用来获取并返回字符串中所有的元音字母的个数
+		String.prototype.getVowelNum=function(){
+			var num=0;
+			for(var i in this)	{
+				var c=this[i];
+				if(c=="a"||c=="e"||c=="i"||c=="o"||c=="u"){
+					num++;
+				}
+			}
+			return num;
+
+		};
+
+		var str="how are you ? fine, thank you.";
+		console.log(str.getVowelNum());
+
+
+		var str2="welcome to nanjing";
+		console.log(str2.getVowelNum());
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

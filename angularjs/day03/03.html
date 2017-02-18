@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>显示用户名，并按指定字段进行排序</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/js/jquery-1.10.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/03.js"></script>
+	<style>
+		.mt20{
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body ng-controller="DirectiveController">
+	<!-- .container>(.row>.col-sm-8)*2 -->
+	<div class="container mt20">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<select ng-model="s1" ng-options="k as k for (k,v) in users[0]">
+					<option value="">请选择排序方式</option>
+				</select>
+			</div>
+		</div>
+		<div class="row mt20">
+			<div class="col-sm-8 col-sm-offset-2">
+				<table class="table table-bordered table-striped table-hover">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>姓名</th>
+							<th>年龄</th>
+							<th>密码</th>
+							<th>性别</th>
+							<th>身高</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="u in users|orderBy:s1">
+							<td ng-cloak>{{u.id}}</td>
+							<td ng-cloak>{{u.name}}</td>
+							<td ng-cloak>{{u.age}}</td>
+							<td ng-cloak>{{u.pwd}}</td>
+							<td ng-cloak>{{u.sex}}</td>
+							<td ng-cloak>{{u.height}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

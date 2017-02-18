@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/include.js"></script>
+	<script>
+		$(function(){
+			$("#apple").tooltip({
+				content:"你是我的小苹果",
+				// show:"slideDown",
+				position:{
+					at:"right bottom",
+					my:"left top",
+				},
+				track:true,
+			});
+
+			$("#close").button({
+				icons:{
+					primary:"ui-icon-home"
+				},
+			}).tooltip({
+				content:"close",
+				track:true,
+			});
+		});
+	</script>
+</head>
+<body>
+	<img src="images/apple.gif" title="小呀小苹果" id="apple">
+	<hr>
+
+	<button id="close" title="">关闭</button>
+</body>
+</html>

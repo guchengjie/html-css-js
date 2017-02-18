@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		 var stu=new Object();
+		 //为对象添加属性
+		 stu.id=9527;
+		 stu.name="唐伯虎";
+		 stu.age=25;
+		 stu.sex="男";
+		 //为对象添加行为（功能），称为方法，方法其本质上就是一个属性，只不过属性的值为函数
+		 stu.study=function(){
+		 	console.log("我是一个学生，正在学习！");
+		 };
+		 stu.sayHi=function(){
+		 	// console.log("大家好，我叫"+name); //不行
+		 	// console.log("大家好，我叫"+stu.name);
+		 	console.log("大家好，我叫"+this.name); //this表示当前这个对象
+		 };
+
+		 console.log(stu.name);
+		 // console.log(stu.age);
+		 console.log(stu["age"]);
+		 console.log(stu["sex"]);
+
+		 stu.study();
+		 // stu.sayHi();
+		 stu["sayHi"]();
+
+		 stu.name="秋香";
+		 console.log(stu.name);
+
+		/* parseInt();
+
+		 function calc(){
+
+		 }
+
+		 calc();
+
+		 study();*/
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

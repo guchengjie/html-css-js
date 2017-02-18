@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1.手动分割
+		var str="tom,jack,alice,mike,zhangsan,lisi";
+		//方法1:
+		/*var a=[""];
+		var num=0;
+		for(var i=0;i<str.length;i++){
+			if(str[i]==","){
+				num++;
+				a[num]=""
+			}else{
+				a[num]=a[num]+str[i];
+			}
+		}
+		console.log(a)*/
+
+		//方法2：
+		/*var names=[];
+		var index=str.indexOf(",");
+		var start=0;
+		while(index!=-1){
+			names[names.length]=str.substring(start,index);
+			start=index+1;
+			index=str.indexOf(",",start);
+		}
+		names[names.length]=str.substring(start);
+		console.log(names);*/
+
+
+		//2.倒计时，距离元旦还有多少天？
+		/*var today=new Date();
+		var newYear=new Date("2017-1-1");
+		var days=newYear.getTime()-today.getTime();
+		days=Math.ceil(days/(1000*60*60*24));
+		console.log("距离元旦还有"+days+"天");*/
+
+		//3.限时抢购，距离双十一还有5天14小时34分钟46秒
+		function buy(){
+			var today=new Date();
+			var double11=new Date(2016,10,11);
+			var time=(double11.getTime()-today.getTime())/1000;
+			var days=show(Math.floor(time/60/60/24));
+			var hours=show(Math.floor(time/60/60%24));
+			var minutes=show(Math.floor(time/60%60));
+			var seconds=show(Math.floor(time%60));
+			
+			var t="距离双十一还有: "+days+"天"+hours+"小时"+minutes+"分"+seconds+"秒";
+			$("mydiv").innerHTML=t;
+			var timer=setTimeout(buy,1000);
+		}
+		function show(num){
+			if(num<10){
+				num="0"+num;
+			}
+			return num;
+		}
+		window.onload=function(){
+			buy();
+		};
+
+		function $(id){
+			return document.getElementById(id);
+		}
+		</script>
+		<style>
+			#mydiv{
+				width: 500px;
+				margin: 0 auto;
+				font-size: 25px;
+				color: #fff;
+				text-align: center;
+				background: #06f;
+			}
+		</style>
+	</script>
+</head>
+<body>
+	<div id="mydiv"></div>
+</body>
+</html>

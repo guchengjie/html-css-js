@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function Student(name){
+			this.name=name;
+			this.run=function(){};
+		}
+		var stu=new Student("tom");
+		// console.log(stu.constructor);
+
+		//1.动态向原型对象中添加
+		/*Student.prototype.sex="男";
+		Student.prototype.run=function(){
+			console.log("正在跑步！");
+		};*/
+
+		//2.直接覆盖原型对象
+		Student.prototype={
+			constructor:Student,
+			hobby:"睡觉"
+		};
+
+		var stu2=new Student("alice");
+
+		console.log(stu.name);
+		/*console.log(stu.sex);
+		stu.run();*/
+		console.log(stu.hobby); //覆盖原型对象之前创建的对象无法访问hobby
+
+		// console.log(stu2.constructor);
+		console.log(stu2.name);
+		console.log(stu2.hobby); //覆盖原型对象之前创建的对象可以访问hobby
+
+		console.log(stu);
+		console.log(stu2);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

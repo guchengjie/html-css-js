@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#mydiv{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red
+		}
+	</style>
+	<!-- 方式1 -->
+	<script>
+		console.log("方式1");
+	</script>
+	<!-- 方式2 -->
+	<script src="js/itany.js"></script>
+</head>
+<body>
+	<!-- 方式3:在事件发生时执行JavaScript代码 -->
+	<input type="button" value="点   我" onclick="javascript:alert('我被点了，好疼')">
+
+	<button onclick="alert('你再点我试试')">再点我试试</button>
+
+	<div id='mydiv' onclick='console.log("div被点击了！")'>我是一个div</div>
+
+	<!-- <a href="#" onclick="alert('超链接被点击了')">我是超链接</a>	 -->
+	
+	<!-- 超链接点击执行JavaScript代码时，必须在href属性中添加javascript前缀 -->
+	<a href="javascript:alert('超链接被点击了')">我是超链接</a>	
+</body>
+</html>

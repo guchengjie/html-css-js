@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>内置指令：options</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/02.js"></script>
+</head>
+<body ng-controller="DirectiveController">
+	<!-- 简单集合 -->
+	<select ng-model="s1" ng-options="v for (k,v) in arr">
+		<option value>请选择</option>
+	</select>
+	<h3>{{s1}}</h3>
+	<hr>
+	
+	<!-- k as v含义：将k作为option的value值，将v作为option的text值 -->
+	<select ng-model="s2" ng-options="k as v for (k,v) in arr">
+		<option value>请选择</option>
+	</select>
+	<h3>{{s2}}</h3>
+
+	<!-- 复杂集合 -->
+	<!-- <select ng-model="s3" ng-options="u.id as u.name for u in users"> -->
+	<select ng-model="s3" ng-options="v.id as v.name for (k,v) in users">
+		<option value>请选择</option>
+	</select>
+	<h3>{{s3}}</h3>
+</body>
+</html>

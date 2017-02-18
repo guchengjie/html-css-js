@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.hidden{
+			display:none;
+		}
+		#ad{
+			position: absolute;
+			top: 50px;
+			left: 100px;
+		}
+		#num{
+			position: absolute;
+			top: 210px;
+			left: 500px;
+		}
+		a{
+			display: block;
+			float: left;
+			width: 20px;
+			height: 20px;
+			border: 1px solid #999;
+			background-color: #fff;
+			color: #000;
+			margin-right: 2px;
+			font-size: 12px;
+			text-align: center;
+			line-height: 23px;
+		}
+	</style>
+	<script>
+		var max=4; //总的图片数量
+		var now=1; //当前显示的图片，默认为第1张
+		var timer; //计时器
+
+		function show(num){
+			if(num){ //判断是否传递图片编号
+				now=num;
+				clearTimeout(timer);//清除原来的计时器
+			}
+
+			for(var i=1;i<=max;i++){
+				if(i==now){
+					$("ad"+now).style.display="block"; //显示当前图片
+				}else{
+					$("ad"+i).style.display="none"; //其他图片隐藏 
+				}
+			}
+			if(now==4){
+				now=1;
+			}else{
+				now++;
+			}
+			timer=setTimeout(show, 2000);//每2秒切换图片
+		} 
+
+		window.onload=function(){
+			show();
+		};
+
+
+
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+<body>
+	<div id="ad">
+		<img src="images/ad-01.jpg" id="ad1">
+		<img src="images/ad-02.jpg" id="ad2" class="hidden">
+		<img src="images/ad-03.jpg" id="ad3" class="hidden">
+		<img src="images/ad-04.jpg" id="ad4" class="hidden">
+	</div>
+	<div id="num">
+		<a onmouseover="show(1)">1</a>
+		<a onmouseover="show(2)">2</a>
+		<a onmouseover="show(3)">3</a>
+		<a onmouseover="show(4)">4</a>
+	</div>
+</body>
+</html>

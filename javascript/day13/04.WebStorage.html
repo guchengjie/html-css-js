@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	var $=function(id){
+		return document.getElementById(id);
+	};
+
+	function doWrite(){
+		var username=$("username").value;
+		var pwd=$("pwd").value;
+
+		//存储到localStorage中
+		localStorage.username=username;
+		localStorage.password=pwd;
+
+		//存储到sessionStorage中
+		sessionStorage.sex="男";
+		sessionStorage.hobby="game";
+
+	}
+
+	function doReadAll(){
+		console.log(localStorage);
+		console.log(sessionStorage);
+	}
+
+	function doReadLocalStorage(key){
+		console.log(localStorage.getItem(key));
+		console.log(sessionStorage.getItem("sex"));
+		console.log(sessionStorage.sex);
+	}
+
+	function doOther(){
+		// console.log(sessionStorage.length);
+		// localStorage.height=180.5;
+		// localStorage.setItem("weight",170);
+		// localStorage.stu-score=90;
+		// localStorage.setItem("stu-score",90);
+		// localStorage.removeItem("height");
+		// sessionStorage.clear();
+		// console.log(localStorage.key(1));
+
+		localStorage.password="666";
+	}
+	</script>
+</head>
+<body>
+	用户名：<input type="text" id="username"><br>
+	密码：<input type="password" id="pwd"><br>
+	<input type="button" value="写入WebStorage" onclick="doWrite()">
+	<br>
+	<hr>
+
+	<input type="button" value="读取所有WebStorage" onclick="doReadAll()">
+	<input type="button" value="读取localStorage中的password" onclick="doReadLocalStorage('password')">
+	<input type="button" value="其他方法" onclick="doOther()">
+	<input type="button" value="" onclick="">
+	<input type="button" value="" onclick="">
+
+</body>
+</html>

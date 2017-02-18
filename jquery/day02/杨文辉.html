@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			text-align: center;
+		}
+	</style>
+	<script>
+		//提示用户输入2个大于1的正整数，第一个表示宽度，第二个表示高度，如输入8和5，打印如下图形
+		var kuan=prompt("请输入平行四边形的宽度(大于1的正整数)")*1;
+		while(isNaN(kuan)||kuan<=1||kuan%1!=0){
+			kuan=prompt("输入有误!请输入平行四边形的宽度(大于1的正整数)")*1;
+		}
+		var hang=prompt("请输入平行四边形的行数(大于1的正整数)")*1;
+		while(isNaN(hang)||hang<=1||hang%1!=0){
+			hang=prompt("输入有误!请输入平行四边形的行数(大于1的正整数)")*1;
+		}
+		for(var i=1;i<=hang;i++){
+			for(var j=1;j<=kuan+hang-1;j++){	
+				//1.判断是不是第一行并且大于等于行数 2.判断是不是最后一行并且小于等于宽数 3.打印左边斜  4.打印右边斜
+				if(i==1&&j>=hang||i==hang&&j<=kuan||j==hang-i+1||j==kuan+hang-i){
+					document.write("*&nbsp;&nbsp;&nbsp;");
+				}else{
+					document.write("&nbsp; &nbsp;&nbsp;&nbsp;")
+				}
+			}
+			document.write("<br>");
+		}
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

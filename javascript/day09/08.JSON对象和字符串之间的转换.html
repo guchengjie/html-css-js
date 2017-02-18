@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1.将JSON对象转换为字符串
+		/*var dog={
+			"name":"旺财",
+			"age":2,
+			"hobby":"叫"
+		};*/
+
+		/*alert(dog);
+		alert(dog.name);
+		console.log(typeof dog);*/
+
+		/*var str=JSON.stringify(dog);
+		alert(str);
+		alert(str.name);
+		console.log(typeof str);*/
+
+		/*var num=5;
+		console.log(num.length);*/
+
+		//2.将字符串转换为JSON对象
+		var str='{"id":1001,"username":"tom","age":20}';
+		var obj=JSON.parse(str);
+		console.log(obj.username);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

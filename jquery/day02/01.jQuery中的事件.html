@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.over{
+			background:#ccc;
+			font-size: 14px;
+			color: red;
+		}
+		.itany{
+			text-decoration: line-through;
+		}
+	</style>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		$(document).ready(function(){
+			//鼠标事件
+			/*$("li").click(function(){
+				console.log("点击了li，内容为："+$(this).html());
+			});*/
+
+			//$("li").mouseover(function(){
+				/*$(this).css("background","pink");
+				$(this).css("color","red");
+				$(this).css("font-size","14px");*/
+				/*$(this).css({
+					"background":"pink",
+					"font-size":"24px",
+				});*/
+				//$(this).addClass("over itany");
+			//}).mouseout(function(){
+				/*$(this).css("background","#fff");
+				$(this).css("color","#000");*/
+			//	$(this).removeClass("over");
+			//});
+
+			// $("li").bind({
+			/*$("li").on({
+				click:function(){
+					console.log("点击了li，内容为："+$(this).html());
+				},
+				mouseover:function(){
+					$(this).addClass("over itany");
+				},
+				mouseout:function(){
+					$(this).removeClass("over");
+				},
+			});*/
+
+			/*$(":button").click(function(){
+				$("li").unbind("mouseout");
+				// $("li").unbind("mouseover");
+				$("li").off("mouseover");
+			});*/
+
+			/*
+				事件参数：
+				1.在事件所绑定的回调函数中，可以接受一个参数，该参数用于记录事件状态
+				2.包括：
+					事件类型
+					发生位置（screen相对于屏幕、page相对于页面、client相对于浏览器、offset相对于自身）
+					事件源
+					时间戳等
+				3.根据事件类型不同，参数中存放的数据含义也有所不同，比如鼠标事件中的which属性表示哪个按钮	
+
+			*/
+			$("li").click(function(obj){
+				// console.log($(this).html());
+				/*for(var index in obj){
+					console.log(index+"="+obj[index]);
+				}*/
+				console.log(obj.type);	
+				console.log(obj.target==this);
+				// console.log(obj.timeStamp);
+				console.log(new Date(obj.timeStamp));
+
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="移除事件">
+	<hr>
+
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+	</ul>
+</body>
+</html>

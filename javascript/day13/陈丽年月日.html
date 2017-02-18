@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	var today=new Date();
+    var year=today.getFullYear();
+    var month=today.getMonth();
+    var day=today.getDate();
+    window.onload=function(){  
+        $("birth_year").add(new Option(year,null));
+        $("birth_month").add(new Option(month+1,null));
+        $("birth_day").add(new Option(day,null));
+        addOption(birth_year, 1980, year);  
+        addOption(birth_month, 1, 12);  
+        addOption(birth_day, 1, 31);  
+    } 
+  
+    function setDays(year, month,day) {  
+        var monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];  
+        var yea = year.options[year.selectedIndex].text;  
+        var mon = month.options[month.selectedIndex].text;  
+        var num = monthDays[mon - 1];  
+        if (mon == 2 && isLeapYear(yea)) {  
+            num++;  
+        }  
+        for (var j = day.options.length - 1; j >=num; j--) {  
+               day.remove(j);  
+        }  
+        for (var i = day.options.length; i <= num; i++) {  
+               addOption(birth_day,i,i);  
+        }  
+    }  
+        
+    function isLeapYear(year)  
+    {  
+        return (year % 4 == 0 || (year % 100 == 0 && year % 400 == 0));  
+    }  
+       
+
+    function addOption(selectbox, start, end) {  
+        for(var i=start;i<=end;i++){
+          var option = document.createElement("option");  
+          option.text = i;  
+          option.value = i;  
+          selectbox.options.add(option);  
+        }
+    }  
+     function $(id){
+      	return document.getElementById(id);
+      }
+
+	</script>
+</head>
+<body>
+       <select id="birth_year" onchange="setDays(this,birth_month,birth_day);"></select> 年
+       <select id="birth_month" onchange="setDays(birth_year,this,birth_day);"></select>月
+       <select id="birth_day"></select>日                   
+</body>  
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function show(){
+			console.log("回调函数");
+		}
+
+		// show();
+
+		function callback(){
+			alert("点击了窗口");
+		}
+
+		// window.onclick=callback();
+		window.onclick=callback; //回调函数，即回头再调用此函数，不能加小括号
+	</script>
+</head>
+<body>
+	<input type="button" value="点我" onclick="alert('被点击了')">
+	<input type="button" value="点我2" onclick="show()">
+</body>
+</html>

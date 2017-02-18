@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//	有表格主体部分的第3行插入一个新行（跨越5列）
+		function doInsert(){
+			var tr=document.createElement("tr");
+			var td=document.createElement("td");
+			td.colSpan="5";
+			td.innerHTML="一个跨越5列的新行";
+			tr.appendChild(td);
+
+			var tb=document.getElementById("tb");
+			// var trs=document.getElementsByTagName("tr");
+			var trs=tb.getElementsByTagName("tr"); //在tbody中查找所有tr
+			tb.insertBefore(tr,trs[2]);
+		}
+
+		//将表格主体中的第一行删除
+		function doDelete(){
+			var tb=document.getElementById("tb");
+			var trs=tb.getElementsByTagName("tr");
+			tb.removeChild(trs[0]);
+		}
+
+		//将表格主体中的第4行替换为一个新行
+		function doReplace(){
+			var tr=document.createElement("tr");
+			var td=document.createElement("td");
+			td.colSpan="5";
+			td.innerHTML="一个跨越5列的新行";
+			tr.appendChild(td);
+
+			var tb=document.getElementById("tb");
+			var trs=tb.getElementsByTagName("tr");	
+			tb.replaceChild(tr, trs[3]);
+		}
+
+		//将表格主体中的第1行克隆一份，然后添加到最后
+		function doClone(){
+			var tb=document.getElementById("tb");
+			var trs=tb.getElementsByTagName("tr");	
+			var tr=trs[0].cloneNode(true); //false表示克隆时不包括子节点
+			tb.appendChild(tr);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="插入" onclick="doInsert()">
+	<input type="button" value="删除" onclick="doDelete()">
+	<input type="button" value="替换" onclick="doReplace()">
+	<input type="button" value="克隆" onclick="doClone()">
+
+	<hr>
+
+	<!-- table>(thead#th>tr>th{th$}*5)+(tbody#tb>(tr>td{td$}*5)*4) -->
+	<table width="500px" border="1px" align="center">
+		<thead id="th">
+			<tr>
+				<th>th1</th>
+				<th>th2</th>
+				<th>th3</th>
+				<th>th4</th>
+				<th>th5</th>
+			</tr>
+		</thead>
+		<tbody id="tb">
+			<tr>
+				<td colSPan="5">td1</td>
+			</tr>
+			<tr>
+				<td>td1</td>
+				<td>td2</td>
+				<td>td3</td>
+				<td>td4</td>
+				<td>td5</td>
+			</tr>
+			<tr>
+				<td>td1</td>
+				<td>td2</td>
+				<td>td3</td>
+				<td>td4</td>
+				<td>td5</td>
+			</tr>
+			<tr>
+				<td>td1</td>
+				<td>td2</td>
+				<td>td3</td>
+				<td>td4</td>
+				<td>td5</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

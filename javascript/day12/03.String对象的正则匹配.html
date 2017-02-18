@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function doSearch(){
+			var str=document.getElementById("txt").value;
+			var reg=/a{2}/;
+			var result=str.search(reg);
+			console.log(result);
+		}
+
+		function doMatch(){
+			var str=document.getElementById("txt").value;
+			var reg=/a{2}/ig;
+			var result=str.match(reg);
+			console.log(result);
+		}
+
+		function doReplace(){
+			var str=document.getElementById("txt").value;
+			// var reg=/a{2}/gi;
+			var reg=/[;_.-]/g;
+			var result=str.replace(reg,",");
+			console.log(result);
+			document.getElementById("txt").value=result;
+		}
+
+		function doSplit(){
+			var str=document.getElementById("txt").value;
+			var reg=/[,;_.-]/;
+			var result=str.split(reg);
+			console.log(result);
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt" size="40"><br>
+	<input type="button" value="search" onclick="doSearch()">
+	<input type="button" value="match" onclick="doMatch()">
+	<input type="button" value="replace" onclick="doReplace()">
+	<input type="button" value="split" onclick="doSplit()">
+</body>
+</html>

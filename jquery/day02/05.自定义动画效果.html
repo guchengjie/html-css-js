@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#apple{
+			width: 60px;
+			height: 60px;
+		}
+	</style>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		$(function(){
+			$(":button").click(function(){
+				$("#apple").animate({
+					"margin-left":"+=500px",
+				},3000,function(){
+					$("#apple").animate({
+						"margin-top":"+=300px"
+					},3000,function(){
+						$("#apple").animate({
+							width:"200px",
+							height:"200px"
+						},3000,function(){
+							$(this).animate({
+								width:"0px",
+								height:"0px"
+							},2000,function(){
+								alert("动画完成！");
+							});
+						});
+					});
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="  g o  ">	
+	<br>
+	<br>
+
+	<img src="images/apple.gif" id="apple">
+</body>
+</html>

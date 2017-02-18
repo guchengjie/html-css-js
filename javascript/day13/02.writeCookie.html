@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function doWrite(){
+			var username=$("username").value;
+			var pwd=$("pwd").value;
+
+			username=encodeURIComponent(username);
+			// console.log(username);
+			//decodeURIComponent()
+
+			document.cookie="username="+username;
+			var today=new Date();
+			var expiresDate=new Date(today.getFullYear(),today.getMonth(),today.getDate()+7); //保存7天
+			document.cookie="pwd="+pwd+";expires="+expiresDate.toUTCString();
+			today.setDate(30);
+			document.cookie="age=23;expires="+today.toGMTString();
+
+			console.log("写入Cookie成功！");
+		}
+
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+<body>
+	用户名：<input type="text" id="username"><br>
+	密码：<input type="password" id="pwd"><br>
+	<input type="button" value="写入Cookie" onclick="doWrite()">
+</body>
+</html>

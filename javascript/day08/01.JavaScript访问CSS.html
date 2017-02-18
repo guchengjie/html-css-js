@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wbs16092{
+			width: 300px;
+			height: 300px;
+			font-size: 30px;
+			color: blue;
+			border-top: 2px solid red;
+		}
+		li{
+			list-style: none;
+			float: left;
+			width: 104px;
+			height: 33px;
+			background: url(images/bg3.gif) no-repeat;
+			font-size: 12px;
+			text-align: center;
+			line-height: 33px;
+			color: #fff;
+		}
+		.over{
+			background: url(images/bg2.gif) no-repeat;
+			font-style: italic;
+		}
+		.out{
+			background: url(images/bg3.gif) no-repeat;
+			font-style: normal;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			// var mydiv=document.getElementById("mydiv");
+			/*mydiv.style.fontSize="30px";
+			mydiv.style.color="red";
+			mydiv.style.height="300px";
+			mydiv.style.width="300px";
+			mydiv.style.borderTop="2px dashed pink";*/
+			// mydiv.className="wbs16092";
+			var lis=$("nav").getElementsByTagName("li");
+			for(var i=0;i<lis.length;i++){
+				lis[i].onmouseover=function(){
+					this.className="over"; //事件绑定时回调函数中的this，表示触发事件的元素，即事件源
+				};
+				lis[i].onmouseout=function(){
+					this.className="out";
+				};
+			}
+		};
+
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+<body>
+	<!-- <div id="mydiv">wbs16092</div> -->
+	<ul id="nav">
+		<li>资讯动态</li>
+		<li>产品世界</li>
+		<li>南京网博</li>
+	</ul>
+</body>
+</html>

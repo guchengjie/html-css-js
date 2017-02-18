@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>表格table</title>
+	<script src="jquery/jquery-1.9.0.js"></script>
+	<script src="jqm/jquery.mobile-1.4.5.js"></script>
+	<link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css">
+	<link rel="stylesheet" href="jqm/theme/theme-classic.css">
+	<script>
+		$(function(){
+			$("[data-role=header]").toolbar();
+		});
+	</script>
+</head>
+<body>
+	<div data-role="header" data-position="fixed" data-theme="b">
+		<nav data-role="navbar">
+			<!-- ul>(li>a[href=#page$][data-icon]{hello$})*4 -->
+			<ul>
+				<li><a href="#page1" data-icon="home">hello1</a></li>
+				<li><a href="#page2" data-icon="gear">hello2</a></li>
+				<li><a href="#page3" data-icon="search">hello3</a></li>
+				<li><a href="#page4" data-icon="camera">hello4</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div data-role="page" id="page1" data-theme="b">
+		<div class="ui-content">
+			<h1>简单的ListView</h1>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#">itany1</a></li>
+				<li><a href="#">itany2</a></li>
+				<li><a href="#">itany3</a></li>
+				<li><a href="#">itany4</a></li>
+				<li><a href="#">itany5</a></li>
+			</ul>
+		</div>	
+	</div>
+
+	<div data-role="page" id="page2" data-theme="b">
+		<div class="ui-content">
+			<h2>分组的ListView</h2>
+			<ul data-role="listview" data-inset="true">
+				<li data-role="list-divider">wbs16092</li>
+				<li><a href="#">tom</a></li>
+				<li><a href="#">jack</a></li>
+				<li><a href="#">alice</a></li>
+				<li data-role="list-divider">wbs16082</li>
+				<li><a href="#">zhangsan</a></li>
+				<li><a href="#">lisi</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="page" id="page3" data-theme="b">
+		<div class="ui-content">
+			<h2>自动分组的ListView</h2>
+			<ul data-role="listview" data-inset="true" data-autodivider="true">
+				<li>wbs16092</li>
+				<li><a href="#">tom</a></li>
+				<li><a href="#">jack</a></li>
+				<li><a href="#">alice</a></li>
+				<li>wbs16082</li>
+				<li><a href="#">zhangsan</a></li>
+				<li><a href="#">lisi</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="page" id="page4" data-theme="c">
+		<div class="ui-content">
+			<h1>ListView更多设置</h1>
+			<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="请输入搜索关键字">
+				<li data-icon="gear">
+					<a href="#">itany1</a>
+					<span class="ui-li-aside">tom</span>
+				</li>
+				<li data-icon="false">
+					<a href="#">itany2</a>
+					<span class="ui-li-count" style="border:0">5</span>
+				</li>
+				<!-- <li data-icon="info"><a href="#"><img src="jqm/images/album-bb.jpg" alt="">itany3</a></li> -->
+				<li><a href="#"><img src="jqm/images/icons-png/arrow-u-black.png" class="ui-li-icon">itany4</a></li>
+				<li><a href="#"><img src="jqm/images/us.png" class="ui-li-icon">itany5</a></li>
+			</ul>
+		</div>	
+	</div>
+
+
+
+
+</body>
+</html>

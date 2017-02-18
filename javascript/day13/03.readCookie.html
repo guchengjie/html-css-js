@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function doReadAll(){
+			var str=document.cookie;
+			// console.log(str);
+			var array=str.split("; ");
+			for(var i=0;i<array.length;i++){
+				// console.log(array[i]);
+				var array2=array[i].split("=");
+				console.log(array2[0]+":"+decodeURIComponent(array2[1]));
+			}
+		}
+		
+		function doRead(key){
+			
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="读取所有Cookie" onclick="doReadAll()"><br>
+	<input type="button" value="读取Cookie中的pwd" onclick="doRead('pwd')"><br>
+	<input type="button" value="读取Cookie中的age" onclick="doRead('age')"><br>
+	<input type="button" value="" onclick=""><br>
+</body>
+</html>

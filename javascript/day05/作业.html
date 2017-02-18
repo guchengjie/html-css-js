@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1.将数组中的所有元素以短横线拼接在一起，并输出（自己实现）
+		/*var allstr=["I","am","jackson","matin"]
+		var str="";
+		for(var i=0;i<allstr.length;i++)
+		{
+			str+=allstr[i];
+			if(i<allstr.length-1)
+			{
+				str+="-";
+			}
+		}
+		document.write(str);*/
+
+		/*var names=['tom','jack','mike','alice','alex'];
+		var str='';
+		for(i=0;i<names.length;i++){
+			str=str+names[i]
+			if (i==names.length-1) {
+				break;
+			}
+			str=str+('-');
+		}
+		console.log(str);*/
+
+		/*var nums=new Array(8,4,2,1,23,344,12);
+		var a = nums.join("-");
+		console.log(a);
+
+		var c="";
+		for (var i = 0; i < nums.length; i++) {
+			if(i== nums.length-1){
+				c+=nums[i];
+				break;
+			}
+			c=c+nums[i]+"-"
+			console.log(c);
+		}
+		console.log(c);*/
+
+		//2.提示输入班级人数，然后循环获取每位学生的考试成绩，并输出前三名（不允许使用数组）
+		var a=0;
+		var b=0;
+		var c=0;
+		var num=Number(prompt('请输入学生人数：'));
+		for(var i=1;i<=num;i++){
+			var score=Number(prompt('请输入第'+i+'个学生的成绩'));
+			if (score>a) {
+				c=b;
+				b=a;
+				a=score;
+			}else if (score>b) {
+				c=b;
+				b=score;
+			}
+			else if (score>c) {
+				c=score;
+			}
+		}
+		console.log('第一名的成绩是'+a);
+		console.log('第二名的成绩是'+b);
+		console.log('第三名的成绩是'+c);
+
+		
+
+		//定义一个函数，将数组反转，返回反转后的新数组
+		function fn(array){
+			array.reverse();
+			return array;
+		}
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

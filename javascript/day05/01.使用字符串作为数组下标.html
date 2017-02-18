@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var array=[134,25,89,3,64]; 
+		array[5]=67;
+		array["age"]=24;
+		array["name"]="tom";
+		array["height"]=180.5;
+		array[6]=90;
+
+		/*console.log(array.length); //length属性无法获取字符串索引的元素
+		console.log(array);*/
+
+		/*for(var i=0;i<array.length;i++){
+			console.log(array[i]);
+		}*/
+
+		for(var index in array){
+			// console.log(index);
+			console.log(index+"="+array[index]);
+
+		}		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

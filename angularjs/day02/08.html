@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>内置指令：if、switch</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/08.js"></script>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	
+</head>
+<body ng-controller="DirectiveController">
+	<!-- ng-if、ng-show、ng-hide -->
+	<button ng-click="doChange()">变</button>
+	<br>
+	<!-- <div ng-if="flag"></div> -->
+	<!-- <div ng-show="flag"></div> -->
+	<div ng-hide="flag"></div>
+	<hr>
+
+
+	<!-- ng-switch -->
+	等级：<input type="text" ng-model="level" ng-init="level='A'">
+	<br>
+	<div ng-switch="level|uppercase">
+		<p ng-switch-when="A">一级棒</p>
+		<p ng-switch-when="B">二级棒</p>
+		<p ng-switch-when="C">三级棒</p>
+		<p ng-switch-when="D">还是挺棒</p>
+		<p ng-switch-default>还行</p>
+	</div>
+
+</body>
+</html>

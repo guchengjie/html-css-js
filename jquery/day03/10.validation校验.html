@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		 form{
+		 	line-height: 25px;
+		 }
+	</style>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script src="validation/jquery.validate.js"></script>
+	<script src="validation/additional-methods.js"></script>
+	<script src="validtion/messages_zh.js"></script>
+	<script>
+		$(function(){
+			$("#frm").validate({
+				rules:{
+					name:{
+						required:true,
+						minlength:5,
+					},
+					pwd:{
+						required:true,
+						rangelength:[6,10],
+					},
+					repwd:{
+						equalTo:"#pwd",
+					},
+					age:{
+						range:[16,50],
+					},
+					email:{
+						required:true,
+						// email:true,
+						// myemail:true,
+						regexp:/^\w+@\w+(\.[a-z]{2,3}){1,2}$/,
+					},
+					head:{
+						extension:"jpg|gif|bmp|png", //需要使用附加难文件：addtional-methods.js
+					},
+					phone:{
+						regexp:/^13\d{9}$/,
+					},
+					tel:{
+						regexp:/^$/,
+					}
+				},
+				messages:{
+					name:{
+						required:"姓名不能为空",
+						minlength:"最少{0}位",
+					},
+					pwd:{
+						required:"密码不能为空",
+						rangelength:"长度范围在{0}-{1}之间"
+					},
+					repwd:{
+						equalTo:"两次输入的密码不一致",
+					},
+					age:{
+						range:"年龄范围在{0}-{1}之间"
+					},
+					phone:{
+						regexp:"手机号码格式不正确",
+					}
+				}
+			});
+		});
+
+		/*
+			扩展validation校验框架，增加校验规则
+			$.validator.addMethod(name,callback,message)
+				参数name表示校验规则名称
+				参数callback表示回调函数，进行校验参数
+				参数message表示校验失败时的消息
+			callback(value,element,params)
+				参数value表示被校验的表单数据	
+				参数element表示被校验的表单元素
+				参数params表示校验规则的值，即在使用时传入的值，可以是布尔值、字符串、数字、正则表达式等
+				注：回调函数执行后必须返回一个布尔值，true表示校验成功,false表示校验失败	
+		*/
+		$.validator.addMethod("myemail",function(value,element,params){
+			var reg=/^\w+@\w+(\.[a-z]{2,3}){1,2}$/;
+			if(params){
+				return reg.test(value);
+			}
+			return false;
+		},"邮箱格式不正确");
+
+		$.validator.addMethod("regexp",function(value,element,params){
+			return params.test(value);
+		},"格式不正确");
+	</script>
+</head>
+<body>
+	<form action="success.html" id="frm">
+		<!-- 方式1：不建议 -->
+		<!-- <label for="name">姓名：</label> <input type="text" name="name" id="name" class="required"> <br>
+		<label for="pwd">密码：</label> <input type="password" name="pwd" id="pwd" class="required" minLength="6" maxlength="10"> <br> -->
+	
+		<label for="name">姓名：</label> <input type="text" name="name" id="name"> <br>
+		<label for="pwd">密码：</label> <input type="password" name="pwd" id="pwd"> <br>
+		<label for="repwd">确认密码：</label> <input type="password" name="repwd" id="repwd"> <br>
+		<label for="age">年龄：</label> <input type="text" name="age" id="age"> <br>
+		<label for="email">邮箱：</label> <input type="text" name="email" id="email"> <br>
+		<label for="head">头像：</label> <input type="file" name="head" id="head"> <br>
+		<label for="phone">手机号：</label> <input type="text" name="phone" id="phone"> <br>
+		<label for="tel">固定电话：</label> <input type="text" name="tel" id="tel"> <br>
+		
+
+		<input type="submit" value="注册">
+	</form>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

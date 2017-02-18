@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/* #mydiv{
+			width: 200px;
+			height: 200px;
+			background-color: #ccc;
+			border: 1px solid red;
+			font-size: 20px;
+		} */
+		#username{
+			outline: none;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			$("btn").onclick=function(){
+				/*console.log($("mydiv").style.width);
+				console.log($("mydiv").style.backgroundColor);
+				console.log($("mydiv").style.fontSize);*/
+
+				$("mydiv").style.fontSize="40px";
+				$("mydiv").style.height="800px";
+				$("mydiv").style.borderTopColor="#00f";
+			};
+
+			$("username").onblur=function(){
+				// $("username").style.border="";
+				this.style.border="";
+			};
+		};
+
+		function $(id){
+			return document.getElementById(id);
+		}
+
+		function doFocus(obj){
+			obj.style.border="1px solid red";
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="操作CSS" id="btn">
+	<hr>
+	<div id="mydiv"  style="width: 200px;height: 200px;background-color: #ccc;border: 1px solid red;font-size: 20px;">
+		welcome to itany
+	</div>
+	<br>
+
+	用户名：<input type="text" id="username" onfocus="doFocus(this)">
+
+
+</body>
+</html>

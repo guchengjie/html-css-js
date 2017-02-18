@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function doOpen(){
+			// window.open("01.变量的作用域.html");
+			window.open("http://www.baidu.com","baidu","width=300,height=300,resizable=no,location=no");
+		}
+
+		function doDialog(){
+			window.showModalDialog("http://www.qq.com","qq"); //Chrome不支持，Firefox支持
+		}
+
+		function doClose(){
+			window.close();
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="测试open" onclick="doOpen()">
+	<input type="button" value="测试dialog" onclick="doDialog()">
+	<input type="button" value="测试close" onclick="doClose()">
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>内置指令：repeat</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/01.js"></script>
+</head>
+<body ng-controller="DirectiveController">
+	<h3>直接输出：{{arr}}</h3>
+	<hr>
+
+	<h3>遍历简单数据</h3>
+	<!-- 方式1 -->
+	<ul>
+		<!-- <li ng-repeat="item in arr">{{item}}</li> -->
+		<li ng-repeat="item in user">{{item}}</li>
+	</ul>
+	<br>
+	<!-- 方式2 -->
+	<ul>
+		<!-- <li ng-repeat="(k, v) in arr">{{k}}:{{v}}</li> -->
+		<li ng-repeat="(k, v) in user">{{k}}:{{v}}</li>
+	</ul>
+	<!-- 遍历有重复数据的集合，通过track by指定唯一值，此时只能使用方式2 -->
+	<ul>
+		<li ng-repeat="(k,v) in arr2 track by k">{{v}}</li>
+	</ul>
+	<hr>
+
+	<!-- 遍历对象数组 -->
+	<!-- table>(thead>tr>th*6)>tbody -->
+	<table>
+		<thead>
+			<tr>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>密码</th>
+				<th>性别</th>
+				<th>身高</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="u in users">
+				<td ng-repeat="(k, v) in u">{{v}}</td> <!-- 必须显示所有属性，且按顺序显示，不建议 -->
+				<!-- <td>{{u.id}}</td>
+				<td>{{u.name}}</td>
+				<td>{{u.age}}</td>
+				<td>{{u.pwd}}</td>
+				<td>{{u.sex}}</td>
+				<td>{{u.height}}</td> -->
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+
+	<ul>
+		<li ng-repeat="u in users|filter:{name:'a'}">{{u.name}}</li>
+	</ul>
+	<br>
+	<ul>
+		<li ng-repeat="u in users|orderBy:'id'">{{u.id}},{{u.name}}</li>
+	</ul>
+	<br>
+	<!-- 过滤器与track by一起使用时，track by要放在过滤器的后面，因为先执行过滤操作，然后才遍历 -->
+	<ul>
+		<li ng-repeat="(k,v) in arr2|filter:'m' track by k">{{v}}</li>
+	</ul>
+	<hr>
+
+	<h3>获取遍历状态信息</h3>
+	<table width="500" border="1" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr>
+				<th>k</th>
+				<th>v</th>
+				<th>$index</th>
+				<th>$first</th>
+				<th>$middle</th>
+				<th>$last</th>
+				<th>$even</th>
+				<th>$odd</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="(k, v) in arr|filter:'a'">
+				<td>{{k}}</td>
+				<td>{{v}}</td>
+				<td>{{$index}}</td>
+				<td>{{$first}}</td>
+				<td>{{$middle}}</td>
+				<td>{{$last}}</td>
+				<td>{{$even}}</td>
+				<td>{{$odd}}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<h3>ng-repeat指令存在的问题</h3>
+	<!-- 
+		性能问题：
+		1.每一次ng-repeat循环，都会产生一个局部的作用域对象，消耗内存空间
+		2.当ng-repeat的数组被替换时，它默认不会重新利用已有的DOM元素，而是直接将其全部删除，并重新生成新的数组DOM元素，效率低
+	 -->
+
+</body>
+</html>

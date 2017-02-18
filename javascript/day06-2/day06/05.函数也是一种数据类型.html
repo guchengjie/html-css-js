@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*function fn(){
+			console.log("welcome to itany");
+		}*/
+
+		// var a=5;
+		// console.log(typeof a);
+		// console.log(typeof fn);
+
+		//结论：数据类型string、number、boolean、null、undefined、object、function
+
+		var b=8;
+		/*var fn=function(){
+			console.log("这是一个函数");
+		};*/
+		function fn(){
+			console.log("这是一个函数");
+		}
+
+		function calc(num,fun){ 
+			var sum=num+5;
+			console.log(sum);
+			fun();
+		}
+
+		// calc(b,fn); //将函数fn作为另一个函数calc的参数
+
+		/*function callback(){
+			console.log("click window");
+		}*/
+		// window.onclick=callback;
+
+
+		window.onclick=function(){   //匿名函数、回调函数
+			console.log("click window");
+		};
+
+
+		//也可能用于一次性执行的函数
+		(function(){
+			console.log("itany");
+		})();
+
+
+		calc(b,function(){
+			console.log("匿名函数作为另一个函数的参数");
+		});
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

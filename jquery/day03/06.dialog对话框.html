@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/include.js"></script>
+	<script>
+		$(function(){
+			$("#div1").dialog({
+				title:"提示",
+				buttons:{
+					"确定":function(){
+						console.log("点击了确定！");
+						$("#div1").dialog("close");
+					},
+					"取消":function(){
+						console.log("点击了取消！");
+					}
+				},
+				autoOpen:false,
+				position:{
+					of:"#btn",
+					my:"left top",
+					at:"right bottom",
+				},
+				draggable:false,
+				resizable:false,
+				modal:true,//模态窗口
+				closeText:"关闭",
+				create:function(){
+					console.log("-----create dialog");
+				},
+				open:function(){
+					console.log("-----open dialog");
+				},
+				close:function(){
+					console.log("-----close dialog");
+				}
+			});
+
+			/*$("#div1").dialog("create",function(){
+
+			});*/
+		});
+
+		function doOpen(){
+			$("#div1").dialog("open");
+		}
+	</script>
+	<style>
+		#btn{
+			position: absolute;
+			top: 300px;
+			left: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1">
+		This is dialog!
+	</div>
+
+	<input type="button" value="弹出dialog" id="btn" onclick="doOpen()">
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script src="jqueryui/jquery-ui.js"></script>
+	<link rel="stylesheet" href="jqueryui/jquery-ui.css">
+	<script>
+		$(function(){
+			/*$("#apple").draggable({
+				// containment:"parent",
+				// containment:$("#mydiv"),
+				containment:"#itany",
+			});*/
+
+			$("#div1").datepicker();
+
+			$("#birthday").datepicker({
+				changeYear:true,
+				changeMonth:true,
+				yearRange:"1900:2016",
+				// dateFormat:"yy年mm月dd日 DD",
+				dateFormat:"yy年mm月dd日 D",
+				dayNames:["星期天","星期一","星期二","星期三","星期四","星期五","星期六"],
+				dayNamesShort:["日","一","二","三","四","五","六"],
+				dayNamesMin:["日","一","二","三","四","五","六"],
+				monthNamesShort:["一","二","三","四","五","六","七","八","九","十","十一","十二"],
+				maxDate:"+2d",
+				minDate:"-2y",
+				// showOn:"button",
+				showOn:"both",
+				buttonText:"选择日期",
+				showAnim:"slideDown",
+				duration:1000,
+				// numberOfMonths:2,
+				// numberOfMonths:[3,2],
+				firstDay:1,
+				showWeek:true,
+				// isRTL:true,
+				showOtherMonths:true,
+			});
+		});
+
+		function openDatePicker(){
+			$("#birthday").datepicker("show");
+		}
+	</script>
+	<style>
+		/* #mydiv,#itany{
+			width: 500px;
+			height: 500px;
+			border: 1px solid red;
+		} */
+	</style>	
+</head>
+<body>
+	<!-- <div id="mydiv">
+		<img src="images/apple.gif" id="apple">
+	</div>
+	<br>
+
+	<div id="itany">
+		
+	</div> -->
+
+	<div id="div1"></div>
+	<hr>
+
+	出生日期：<input type="text" id="birthday">
+	<br>
+	<input type="button" value="打开日期面板" onclick="openDatePicker()">
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		$(function(){
+			/*var mydiv=document.getElementById("mydiv"); //DOM对象
+			console.log(mydiv.innerHTML);
+			mydiv.style.color="red";
+			// console.log(mydiv.html()); //DOM对象不能访问jQuery对象的方法
+
+			//将DOM对象转换为jQuery对象
+			var mydiv2=$(mydiv);
+			console.log(mydiv2.html());
+			mydiv2.css("background","pink");*/
+
+
+			var mydiv=$("#mydiv"); //jQuery对象，实际上是一个数组，只不过数组中只包含一个元素
+			// console.log(mydiv.innerHTML); //jQuery对象不能访问DOM对象的属性
+			// console.log(mydiv.length);
+
+			//将jQuery对象转换为DOM对象
+			// var mydiv2=mydiv[0]; //DOM对象	
+			var mydiv2=mydiv.get(0);
+			console.log(mydiv2.innerHTML);
+			// console.log(mydiv2.html());
+
+
+		});
+
+	</script>
+</head>
+<body>
+	<div id="mydiv">
+		Hello jQuery!
+	</div>
+</body>
+</html>

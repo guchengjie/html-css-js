@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>$scope对象</title>
+	<script src="angular/angular.min.js"></script>
+	<script src="js/ng05.js"></script>
+</head>
+<body>
+	<div ng-controller="FirstController">
+		<h3 ng-bind="name"></h3>
+		<h3 ng-bind="age"></h3>
+		<br>
+		<!-- 在子控制器中可以访问父控制器的作用域对象 -->
+		<div ng-controller="SecondController">
+			<h3 ng-bind="name"></h3>
+			<h3 ng-bind="age"></h3>
+			<!-- 如果父子控制器作用域中的数据同名，可以使用$parent访问父控制器作用域中的数据 -->
+			<h3>父控制器中的name：{{$parent.name}}</h3>
+		</div>
+	</div>
+	<hr>
+
+	<div ng-controller="SecondController">
+		<h3 ng-bind="name"></h3>
+		<h3 ng-bind="age"></h3>
+	</div>
+	<hr>
+
+	<div ng-controller="SecondController">
+		<h3 ng-bind="name"></h3>
+		<h3 ng-bind="age"></h3>
+	</div>	
+	<hr>
+
+	<div ng-controller="ThirdController">
+		<h3 ng-bind="sex"></h3>
+		<h3 ng-controller="FourthController">
+			{{address}}
+		</h3>
+	</div>	
+
+
+
+
+
+
+
+</body>
+</html>

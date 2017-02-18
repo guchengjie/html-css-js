@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*function Student(name,age){
+			this.name=name;
+			this.age=age;
+			this.show=function(){
+				console.log("我是一个学生，姓名："+this.name+",年龄："+this.age);
+			};
+			this.sayHello=function(){
+				console.log("您好，我是一个学生！");
+			};
+			this.sayGoodbye=function(){
+				console.log("再见！");
+			};
+		}*/
+
+		/*//在构造函数中有一个属性叫 prototype 
+		console.log(Student.prototype);
+		// console.log(Student.abcd);
+
+		function calc(){
+			console.log(3+5);
+		}
+		console.log(calc.prototype);*/
+
+		/*var stu1=new Student("张三",24);
+		stu1.show();
+		stu1.sayHello();
+		stu1.sayGoodbye();
+
+		var stu2=new Student("李四",18);
+		stu2.show();
+		stu2.sayHello();
+		stu2.sayGoodbye();
+
+		console.log(stu1===stu2);
+		console.log(stu1.name===stu2.name);
+		console.log(stu1.sayHello===stu2.sayHello); //false
+		console.log(stu1.sayGoodbye===stu2.sayGoodbye); //false*/
+
+
+		//stu1.sayHello、stu1.sayGoodbye和stu2.sayHello、stu2.sayGoodbye分别使用不同的内存空间，都要占用资源
+		//但是其内容是完全相同的，为了节省内存空间，希望能够共用
+		function Student(name,age){
+			this.name=name;
+			this.age=age;
+			this.show=function(){
+				console.log("我是一个学生，姓名："+this.name+",年龄："+this.age);
+			};
+		}
+
+		//可以通过prototype来添加新的属性和方法
+		Student.prototype.sayHello=function(){
+			console.log("您好，我是一个学生！");
+		};
+
+		Student.prototype.sayGoodbye=function(){
+			console.log("再见！");
+		};
+
+		Student.prototype.hobby="编程"; //为所有Student对象添加共有属性hobby
+
+		var stu1=new Student("张三",24);
+		stu1.show();
+		stu1.sayHello();
+		stu1.sayGoodbye();
+
+		var stu2=new Student("李四",18);
+		stu2.show();
+		stu2.sayHello();
+		stu2.sayGoodbye();
+
+		console.log(stu1===stu2);
+		console.log(stu1.name===stu2.name);
+		console.log(stu1.sayHello===stu2.sayHello); //false
+		console.log(stu1.sayGoodbye===stu2.sayGoodbye); //false
+
+		var stu3=new Student("王五",26);
+		stu3.sayHello();
+		console.log(stu3.sayHello===stu1.sayHello);
+		console.log(stu3.hobby);	
+		console.log(stu2.hobby);	
+		console.log("-------------华丽的分隔线----------");
+
+		stu3.hobby="睡觉"; //为stu3添加私有的属性hobby
+		console.log(stu3.hobby);	
+		console.log(stu2.hobby);	
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

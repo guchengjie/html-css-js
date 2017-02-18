@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//使用Math对象进行复杂的算术运算，用法：Math.方法名(参数);
+
+		//1.计算3的5次方
+		// console.log(3*3*3*3*3);
+		/*var result=Math.pow(3,5); //参数可以有多个，以逗号隔开
+		console.log(result);*/
+		// console.log(Math.pow(3,5));
+
+		//2.计算绝对值
+		var a=-8;
+		// console.log(Math.abs(a));
+		/*var num1=Number(prompt("请输入第一个整数："));
+		var num2=Number(prompt("请输入第二个整数："));
+		console.log("两数相差："+Math.abs(num1-num2));*/
+
+		//3.四舍五入
+		// console.log(Math.round(12.5));
+		// console.log(Math.round(3.2));
+
+		//4.向上取整、向下取整
+		/*console.log(Math.ceil(2.1)); //天花板方法，获取大于等于参数的最小整数
+		console.log(Math.ceil(2.6));
+		console.log(Math.floor(4.5)); //地板方法，获取小于等于参数的最大整数	*/
+
+		//5.获取一个[0.0,1.0)的随机浮点数
+		// console.log(Math.random());
+
+		//6.获取最大值和最小值
+		/*console.log(Math.max(12,5,2,67,120,4,1,9));
+		console.log(Math.max(34,19));
+		console.log(Math.min(12,5,2,67,120,4,1,9));
+		var a=56;
+		var b=12;
+		var c=90;
+		console.log(Math.max(a,b,c));*/
+
+		//7.获取圆周率PI的值
+		// console.log(Math.PI);	
+
+		var r=prompt("请输入圆的半径：");
+		// var area=Math.PI*r*r;
+		var area=Math.PI*Math.pow(r,2);
+		console.log("圆的面积："+area);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

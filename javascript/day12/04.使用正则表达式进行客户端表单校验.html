@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.error{
+			font-size: 12px;
+			color: red;
+		}
+		.ok{
+			color: green;
+			font-size: 12px;
+		}
+	</style>
+	<script>
+		//用户名由数字、字母、下划线、横线、点、中文组成，只能以数字或字母开头，长度在3-14位
+		function checkUsername(){
+			var reg=/^[\da-z][\u4e00-\u9fa5\w.-]{2,13}$/i;
+			if(!reg.test($("username").value)){
+				$("usernameInfo").className="error";
+				$("usernameInfo").innerHTML="用户名由数字、字母、下划线、横线、点、中文组成，只能以数字或字母开头，长度在3-14位";
+				$("username").select();
+				return false;
+			}else{
+				$("usernameInfo").className="ok";
+				$("usernameInfo").innerHTML="OK";
+				return true;
+			}
+		}
+
+		//密码只能由数字和字母组成，长度为6-10位
+		function checkPwd(){
+			var reg=/^[\da-z]{6,10}$/i;
+			if(!reg.test($("pwd").value)){
+				$("pwdInfo").className="error";
+				$("pwdInfo").innerHTML="密码只能由数字和字母组成，长度为6-10位";
+				return false;
+			}else{
+				$("pwdInfo").className="ok";
+				$("pwdInfo").innerHTML="OK";
+				return true;
+			}
+		}
+
+		//两次输入密码必须一致
+		function checkRepwd(){
+			if($("pwd").value!=$("repwd").value){
+				$("repwdInfo").className="error";
+				$("repwdInfo").innerHTML="两次输入密码不一致";
+				return false;
+			}else{
+				$("repwdInfo").className="ok";
+				$("repwdInfo").innerHTML="OK";
+				return true;
+			}
+		}
+
+		//年龄在1900-今年之间，格式为yyyy-mm-dd
+		function checkBirthday(){
+			var reg=/^((19\d{2})|(200\d)|(201[0-6]))-((0?[1-9])|(1[0-2]))-((0?[1-9])|([1-2]\d)|(3[0-1]))$/;
+			if(!reg.test($("birthday").value)){
+				$("birthdayInfo").className="error";
+				$("birthdayInfo").innerHTML="出生日期格式不正确，格式为yyyy-mm-dd";
+				return false;
+			}else{
+				$("birthdayInfo").className="ok";
+				$("birthdayInfo").innerHTML="OK";
+				return true;
+			}
+		}
+
+		function checkForm(){
+			if(checkUsername()&&checkPwd()&&checkRepwd()&&checkBirthday()){
+				return true;
+			}
+			return false;
+		}
+
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+<body>
+	<h1>用户注册</h1>
+	<form action="success.html" onsubmit="return checkForm()">
+		<table>
+			<tr>
+				<td>用户名：</td>
+				<td>
+					<input type="text" id="username" placeholder="请输入用户名" onblur="checkUsername()">
+					<span id="usernameInfo"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td>
+					<input type="password" id="pwd" placeholder="请输入密码" onblur="checkPwd()">
+					<span id="pwdInfo"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td>
+					<input type="password" id="repwd" placeholder="请输入确认密码" onblur="checkRepwd()">
+					<span id="repwdInfo"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>出生日期：</td>
+				<td>
+					<input type="text" id="birthday" placeholder="请输入出生日期" onblur="checkBirthday()">
+					<span id="birthdayInfo"></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="注册">&nbsp;&nbsp;
+					<input type="reset" value="重置">&nbsp;&nbsp;
+				</td>
+			</tr>
+		</table>
+
+	</form>
+</body>
+</html>

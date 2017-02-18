@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		/*
+			Exception异常处理，使用try...catch...finally
+			try代码块，必须
+			catch代码块，可选
+			finally代码块，可选
+			注：try不能单独存在，catch和finally必须至少有一个
+		*/
+		function fn(){
+			var num=5;
+
+			try{ //存储可能会出现异常的代码
+
+				console.log(num);
+				console.log("hello world");
+				return;
+			}catch(e){ //捕获异常并处理
+				console.log("系统出现异常，请联系管理员，错误消息："+e);
+			}finally{ //存储必须要执行的代码
+				console.log("无论如何都要执行此代码");
+			}
+
+			console.log("welcome to itany");
+		}
+
+		fn();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

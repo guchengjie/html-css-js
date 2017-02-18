@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function doGet(){
+			var degree=document.getElementById("degree"); //Select对象
+			// console.log("选项数量："+degree.length);
+
+			var options=degree.options;
+			/*for(var i=0;i<options.length;i++){
+				var option=options[i]; //Option对象
+				// console.log(option);
+				// console.log(option.text);
+				console.log(option.value);
+			}*/
+
+			console.log("当前选中项的索引："+degree.selectedIndex);
+			console.log("当前选中项的值："+options[degree.selectedIndex].value);
+			console.log("当前选中项的值："+degree.value); //非标准属性，用来直接获取当前选中的项的value
+		}
+
+		function doAdd(){
+			/*var option=document.createElement("option");
+			option.text="博士后";
+			option.value="boshihou";
+			var degree=document.getElementById("degree");
+			degree.appendChild(option);*/
+			// var option=new Option("博士后","boshihou");
+			var option=new Option("初中","chuzhong");
+			var degree=document.getElementById("degree");
+			// degree.add(option,null);
+			degree.add(option,degree.options[1]);
+		}
+
+		function doClear(){
+			var degree=document.getElementById("degree");
+			degree.length=1;
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="获取下拉列表信息" onclick="doGet()">
+	<input type="button" value="添加选项" onclick="doAdd()">
+	<input type="button" value="清空下拉列表" onclick="doClear()">
+	<input type="button" value="" onclick="">
+	<br>	
+	<br>	
+
+	<select id="degree">
+		<option value="0">--请选择学历--</option>
+		<option value="gaozhong">高中</option>
+		<option value="dazhuan">大专</option>
+		<option value="benke">本科</option>
+		<option value="yanjiusheng">研究生</option>
+		<option value="boshi">博士</option>
+	</select>
+	<br>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script>
+		//使用原生JavaScript实现
+		/*window.onload=function(){
+			var mydiv=document.getElementById("mydiv");
+			mydiv.style.width="300px";
+			mydiv.style.height="300px";
+			mydiv.style.border="1px solid #ccc";
+			mydiv.style.fontSize="30px";
+			mydiv.style.color="red";
+		};*/
+
+		//使用jQuery实现
+		//ready()方法称为文档就绪方法，表示当页面加载完成后执行参数中的回调函数，类似于window.onload
+		// $(document).ready(function(){   //$(document).ready() 可以简写为$()
+		$(function(){
+			$("#mydiv").css("border","2px solid red");
+			$("#mydiv").css("font-size","20px");
+			$("#mydiv").css("color","blue");
+		});
+
+
+	</script>
+</head>
+<body>
+	<div id="mydiv">
+		welcome to itany!
+	</div>
+</body>
+</html>

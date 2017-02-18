@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//eval()
+		// var str="5+8";
+		// console.log(str);
+		// console.log(eval(str));
+
+		var x=5,y=9;
+		var str="x+y";
+		// console.log(eval(str));
+
+		// console.log(eval("if(x>y){x*x}else{y*y}"));
+
+		// eval("var a=6;alert(a);");
+
+
+		//isFinite()
+		/*console.log(isFinite(12));
+		console.log(isFinite("aa"));
+		console.log(isFinite(5/0));
+		console.log(5/0);*/
+
+		// file:///Users/appleuser/Desktop/JavaScript/codes/day05/05.%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html?username=%E5%BC%A0%E4%B8%89
+
+		//编码和解码
+		var str="itany南京网博";
+		var s1=encodeURI(str); //使用ISO8859-1编码
+		console.log(s1);
+
+		var s2=decodeURI(s1); //解码
+		console.log(s2);
+
+
+		var s3=escape(str); //使用Unicode编码
+		console.log(s3);
+		var s4=unescape(s3);//解码
+		console.log(s4);
+
+	</script>
+</head>
+<body>
+	
+	<form action="">
+		用户名：<input type="text" name="username">
+		<input type="submit" value="提交">
+	</form>
+
+</body>
+</html>

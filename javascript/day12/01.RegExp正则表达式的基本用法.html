@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//定义一个正则表达式对象
+		// var reg=new RegExp("a","ig");
+		// var reg=/a/ig; //字符串中必须要包含字母a或A
+
+		//属性
+		/*console.log(reg.ignoreCase);
+		console.log(reg.global);
+		console.log(reg.multiline);*/
+
+		//方法
+		// var str="_a75";
+		// console.log(reg.test(str)); //返回true或false
+
+		/*console.log(reg.exec(str)); //返回查找到的结果
+		console.log(reg.lastIndex);
+
+		console.log(reg.exec(str)); //返回查找到的结果
+		console.log(reg.lastIndex);
+
+		console.log(reg.exec(str)); //返回查找到的结果
+		console.log(reg.lastIndex);*/
+
+		/*while(true){
+			var result=reg.exec(str);
+			if(result!=null){
+				console.log(result);
+			}else{
+				break;
+			}
+		}*/
+
+		// var reg=/\d{3}/;
+		// var reg=/^p\d+$/;
+		// var reg=/^x{2,3}[\u4E00-\u9FA5]{2,}[a-cA-C]$/;
+		// var reg=/^[A|B]?$/;
+		// var reg=/^\w{3}\d?$/;
+
+		//身份证（支持新旧证）15 3
+		var str="12345678901234567X";
+		var reg=/^[1-9]\d{14}(\d{2}[\dX])?$/i;
+
+
+		console.log(reg.test(str));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
